@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="@dimen/home_film_icon_width"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_film_ll_marginLR"
+        android:layout_marginRight="@dimen/item_film_ll_marginLR"
+        android:orientation="vertical"
+        android:gravity="center">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/home_film_icon"
+            android:layout_width="@dimen/home_film_icon_width"
+            android:layout_height="@dimen/home_film_icon_height"
+            android:scaleType="centerCrop"
+            fresco:placeholderImage="@mipmap/default_list_pic"/>
+        <TextView
+            android:id="@+id/home_film_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="大鱼海棠"
+            android:singleLine="true"
+            android:textSize="@dimen/textSize_14"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/home_film_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="6.0分"
+            android:textSize="@dimen/textSize_12"
+            android:textColor="@color/title_color"/>
+    </LinearLayout>
+
+</LinearLayout>

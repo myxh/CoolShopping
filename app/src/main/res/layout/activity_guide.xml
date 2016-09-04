@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/guide_btn_start"
+        android:layout_width="@dimen/guide_btn_width"
+        android:layout_height="@dimen/guide_btn_height"
+        android:layout_marginBottom="@dimen/guide_btn_marginBottom"
+        android:paddingStart="@dimen/guide_btn_paddingLeft"
+        android:paddingEnd="@dimen/guide_btn_paddingRight"
+        android:background="@drawable/guide_btn_start_selector"
+        android:textColor="@android:color/white"
+        android:layout_gravity="bottom|center"
+        android:visibility="gone"/>
+
+</FrameLayout>

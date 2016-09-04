@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="home_bar_labels">
+        <item>美食</item>
+        <item>电影</item>
+        <item>酒店</item>
+        <item>休闲娱乐</item>
+        <item>自助餐</item>
+        <item>KTV</item>
+        <item>蛋糕甜点</item>
+        <item>旅游</item>
+        <item>购物</item>
+        <item>摄影写真</item>
+        <item>丽人</item>
+        <item>生活服务</item>
+        <item>门票</item>
+        <item>抽奖公益</item>
+        <item>今日新单</item>
+        <item>全部分类</item>
+    </array>
+
+    <array name="home_bar_icon">
+        <item>@mipmap/icon_home_food_99</item>
+        <item>@mipmap/icon_home_movie_29</item>
+        <item>@mipmap/icon_home_hotel_300</item>
+        <item>@mipmap/icon_home_happy_2</item>
+        <item>@mipmap/icon_home_self_189</item>
+        <item>@mipmap/icon_home_ktv_31</item>
+        <item>@mipmap/icon_home_93</item>
+        <item>@mipmap/icon_home_400</item>
+        <item>@mipmap/icon_home_3</item>
+        <item>@mipmap/icon_home_37</item>
+        <item>@mipmap/icon_home_42</item>
+        <item>@mipmap/icon_home_life_46</item>
+        <item>@mipmap/icon_home_18</item>
+        <item>@mipmap/icon_home_16</item>
+        <item>@mipmap/icon_home_999</item>
+        <item>@mipmap/icon_home_all_0</item>
+    </array>
+    
+    
+    <array name="supplier_product">
+        <item>全部</item>
+        <item>粮油</item>
+        <item>衣服</item>
+        <item>图书</item>
+        <item>电子产品</item>
+        <item>酒水饮料</item>
+        <item>水果</item>
+    </array>
+    <array name="supplier_sort">
+        <item>综合排序</item>
+        <item>配送费最低</item>
+    </array>
+    <array name="supplier_activity">
+        <item>优惠活动</item>
+        <item>特价活动</item>
+        <item>免配送费</item>
+        <item>可在线支付</item>
+    </array>
+
+</resources>

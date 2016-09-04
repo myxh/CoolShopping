@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CoolShopping</string>
+    <string name="tab_title_home">首页</string>
+    <string name="tab_title_around">周边</string>
+    <string name="tab_title_me">我的</string>
+    <string name="tab_title_more">更多</string>
+    <string name="wait_dialog_title">加载中，请稍后...</string>
+    <string name="error_please_check_network">网络无法连接，请检查网络！</string>
+    <string name="error_timeout">请求超时</string>
+    <string name="error_not_found_server">无法连接服务器</string>
+    <string name="error_url_error">URL错误！</string>
+    <string name="error_not_found_cache">找不到缓存</string>
+    <string name="error_system_unsupport_method">不支持该请求！</string>
+    <string name="error_parse_data_error">数据转换错误</string>
+    <string name="error_unknow">未知错误</string>
+    <string name="titleBar_search_hint">请输入商品名、品类或商铺</string>
+    <string name="around">周边</string>
+    <string name="around_all">全部</string>
+    <string name="around_supplier_list_all">全部</string>
+    <string name="around_supplier_list_sort">综合排序</string>
+    <string name="around_supplier_list_activity">优惠活动</string>
+    <string name="around_toolbar_action_edit">编辑</string>
+</resources>

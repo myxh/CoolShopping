@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:paddingLeft="@dimen/item_popowin_paddingLR"
+              android:paddingRight="@dimen/item_popowin_paddingLR"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_popwin_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_popowin_tv_height"
+        android:gravity="center_vertical"
+        tools:text="地点"
+        android:textColor="@color/around_supplier_title_color"
+        android:textSize="@dimen/textSize_14"/>
+
+    <View
+        style="@style/around_view_style"/>
+
+</LinearLayout>

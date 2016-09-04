@@ -1,0 +1,97 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 标题栏 -->
+    <dimen name="textSize_10">10.0sp</dimen>
+    <dimen name="textSize_11">11.0sp</dimen>
+    <dimen name="textSize_12">12.0sp</dimen>
+    <dimen name="textSize_13">13.0sp</dimen>
+    <dimen name="textSize_14">14.0sp</dimen>
+    <dimen name="textSize_15">15.0sp</dimen>
+    <dimen name="textSize_16">16.0sp</dimen>
+    <dimen name="textSize_17">17.0sp</dimen>
+    <dimen name="textSize_18">18.0sp</dimen>
+    <dimen name="textSize_19">19.0sp</dimen>
+    <dimen name="textSize_20">20.0sp</dimen>
+    <dimen name="size_17">12.0sp</dimen>
+    <dimen name="size_18">13.0sp</dimen>
+    <dimen name="size_19">14.0sp</dimen>
+    <dimen name="size_20">15.0sp</dimen>
+    <dimen name="size_21">16.0sp</dimen>
+    <dimen name="size_22">17.0sp</dimen>
+    <dimen name="size_23">17.0sp</dimen>
+    <dimen name="size_24">19.0sp</dimen>
+    <dimen name="common_divider_height">10.0dip</dimen>
+    <dimen name="section_text_size">18.0sp</dimen>
+    <dimen name="location_lay_width">74dp</dimen>
+    <dimen name="titleBar_scan_img_paddingLeft">10dp</dimen>
+    <dimen name="titleBar_scan_img_paddingRight">10dp</dimen>
+    <dimen name="titleBar_news_num_marginLeft">-9dp</dimen>
+    <dimen name="titleBar_news_num_marginRight">8dp</dimen>
+    <dimen name="titleBar_news_num_marginTop">10dp</dimen>
+    <dimen name="round_btn_green_tk_corner">2.0dip</dimen>
+
+    <!--引导页-->
+    <dimen name="guide_btn_width">150dp</dimen>
+    <dimen name="guide_btn_height">43dp</dimen>
+    <dimen name="guide_btn_marginBottom">15dp</dimen>
+    <dimen name="guide_btn_paddingLeft">20dp</dimen>
+    <dimen name="guide_btn_paddingRight">20dp</dimen>
+
+    <!--广告条-->
+    <dimen name="banner_height">140dp</dimen>
+
+
+    <dimen name="titleBar_search_ll_paddingTop">5dp</dimen>
+    <dimen name="titleBar_search_ll_paddingBottom">5dp</dimen>
+    <dimen name="titleBar_search_iv_marginLeft">10dp</dimen>
+    <dimen name="titleBar_search_iv_marginRight">10dp</dimen>
+
+    <!--good item视图-->
+    <dimen name="good_ll_marginLR">5dp</dimen>
+    <dimen name="good_ll_marginTB">5dp</dimen>
+    <dimen name="good_image_width">98.0dip</dimen>
+    <dimen name="good_image_height">98.0dip</dimen>
+    <dimen name="good_appointment_img_marginLeft">1.8999939dip</dimen>
+    <dimen name="good_appointment_img_marginTop">1.8999939dip</dimen>
+    <dimen name="good_ll_ll_marginLeft">6dp</dimen>
+    <dimen name="good_title_marginRight">6dp</dimen>
+    <dimen name="good_title_size">16.0sp</dimen>
+    <dimen name="good_fresh_order_marginRight">3dp</dimen>
+    <dimen name="good_fresh_order_padding">2dp</dimen>
+    <dimen name="good_des_layout_marginRight">6dp</dimen>
+    <dimen name="good_ratingBar_marginTop">5dp</dimen>
+    <dimen name="good_ratingBar_marginBottom">5dp</dimen>
+    <dimen name="good_ratingBar_maxHeight">11dp</dimen>
+    <dimen name="good_price_marginLeft">3dp</dimen>
+    <dimen name="good_count_marginRight">7dp</dimen>
+    <dimen name="good_area_marginRight">7dp</dimen>
+    <dimen name="good_ratingBar_minHeight">11dp</dimen>
+    <dimen name="head_page_paddingTB">10dp</dimen>
+
+    <!--film item-->
+    <dimen name="home_film_icon_width">75dp</dimen>
+    <dimen name="home_film_icon_height">100dp</dimen>
+    <dimen name="home_film_scrollview_height">120dp</dimen>
+    <dimen name="home_film_item_ll_width">70dp</dimen>
+
+    <!--周边-->
+    <dimen name="around_toolbar_height">45dp</dimen>
+    <dimen name="around_titleBar_rl_height">50dp</dimen>
+    <dimen name="around_titleBar_ll_marginLeft">5dp</dimen>
+    <dimen name="around_titleBar_image_width">25dp</dimen>
+    <dimen name="around_titleBar_image_height">25dp</dimen>
+    <dimen name="around_titleBar_cart_marginRight">15dp</dimen>
+    <dimen name="around_supplier_list_ll_height">40dp</dimen>
+    <dimen name="around_supplier_list_image_width">25dp</dimen>
+    <dimen name="around_supplier_list_image_height">25dp</dimen>
+    <dimen name="around_list_marginTop">10dp</dimen>
+    <dimen name="around_list_divider_height">10dp</dimen>
+
+
+    <dimen name="item_popowin_tv_height">45dp</dimen>
+    <dimen name="item_popowin_paddingLR">15dp</dimen>
+    <dimen name="item_film_ll_marginLR">5dp</dimen>
+</resources>

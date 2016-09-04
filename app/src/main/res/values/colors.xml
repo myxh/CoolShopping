@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#ff646464</color>
+    <color name="white">#ffffffff</color>
+    <color name="purple">#ffff00ff</color>
+    <color name="blue">#ff3366cc</color>
+    <color name="gray">#ff666666</color>
+    <color name="gray_2">#ffdcdcdc</color>
+    <color name="color_f6">#fff6f6f6</color>
+
+    <color name="tab_selected">#fb773b</color>
+    <color name="tab_normal">#c5c9d0</color>
+
+    <color name="login_unable_bg_green">#ff90e4da</color>
+    <color name="login_unable_bg">#ffcdced0</color>
+
+    <!-- 首页 -->
+    <color name="home_indicator_fore_color">#FFB29D</color>
+    <color name="home_indicator_background_color">#DEDEDE</color>
+    <color name="home_title_bar_color">#ffff6f36</color>
+    <color name="home_super_today_textColor_default">#ff323232</color>
+    <color name="image_view_btn_pressed_bgColor">#30000000</color>
+    <color name="bg_common_gray">#ffe2e2e2</color>
+    <color name="textColor_16">#ff161616</color>
+    <color name="view_home_cinema_item_title_color">#3e3e3e</color>
+    <!-- TitleBar -->
+    <color name="title_bar_color">#ffffffff</color>
+    <color name="title_text_color">#ff323232</color>
+    <color name="grad">#ff3c3c3c</color>
+    <color name="gray01">#80666666</color>
+    <color name="textColor_32">#ff323232</color>
+    <color name="title_bar_search_color">#ffe55c26</color>
+    <color name="title_bar_search_text_color">#ffffa37e</color>
+    <color name="app_yellow">#ffff4c06</color>
+
+    <!-- GoodsListItem 首页最下面的listView -->
+    <color name="title_color">#ffff621d</color>
+    <color name="value_color">#ffa2a2a2</color>
+    <color name="app_white">#fff1f1f2</color>
+    <color name="good_price_color">#ffff6e21</color>
+    <color name="around_bg_color">#f0f0f0</color>
+    <color name="around_fl_bg">#5555</color>
+    <color name="around_list_title_color">#39ac69</color>
+    <color name="around_list_divider_color">#f0f0f0</color>
+    <color name="around_supplier_title_color">#5a5959</color>
+    <color name="popwin_bg_color">#5000</color>
+    <color name="around_view_bg_color">#e2e2e2</color>
+    <color name="around_supplier_title_selected_color">#39ac69</color>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+              style="@style/home_title_bar_style">
+    
+    <LinearLayout
+        android:id="@+id/titleBar_location_lay"
+        android:layout_width="@dimen/location_lay_width"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:visibility="visible"
+        android:orientation="horizontal"
+        android:background="@drawable/imageview_btn_selector">
+
+        <TextView
+            android:id="@+id/titleBar_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left|center"
+            android:maxLines="2"
+            android:text="北京"
+            android:textSize="@dimen/size_19"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="3dp"
+            android:src="@mipmap/nav_icon_aroow_up_s"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/titleBar_ll_right_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/titleBar_scan_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/imageview_btn_selector"
+            android:paddingLeft="@dimen/titleBar_scan_img_paddingLeft"
+            android:paddingRight="@dimen/titleBar_scan_img_paddingRight"
+            android:src="@mipmap/nav_icon_scan_nor"
+            android:visibility="visible"/>
+        
+        <RelativeLayout
+            android:id="@+id/titleBar_rl_msg_num"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/imageview_btn_selector"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/titleBar_msg_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/nav_icon_message_nor"
+                android:visibility="visible"/>
+            
+            <TextView
+                android:id="@+id/titleBar_news_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/titleBar_news_num_marginTop"
+                android:layout_marginLeft="@dimen/titleBar_news_num_marginLeft"
+                android:layout_marginRight="@dimen/titleBar_news_num_marginRight"
+                android:layout_toRightOf="@id/titleBar_msg_iv"
+                android:background="@mipmap/icon_message_nu"
+                android:gravity="center"
+                tools:text="20"
+                android:textSize="@dimen/textSize_10"
+                android:textColor="@color/home_title_bar_color"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/titleBar_search_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/titleBar_location_lay"
+        android:layout_toLeftOf="@id/titleBar_ll_right_layout"
+        android:background="@drawable/edittext_round_background_yellow"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/titleBar_search_ll_paddingTop"
+        android:paddingBottom="@dimen/titleBar_search_ll_paddingBottom"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/titleBar_search_iv_marginLeft"
+            android:layout_marginRight="@dimen/titleBar_search_iv_marginRight"
+            android:src="@mipmap/home_search"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/titleBar_search_hint"
+            android:textColor="@color/title_bar_search_text_color"
+            android:textSize="@dimen/size_17"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

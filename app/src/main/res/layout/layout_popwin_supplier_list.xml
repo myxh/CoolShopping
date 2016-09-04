@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/popwin_bg_color">
+
+    <ListView
+        android:id="@+id/popwin_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/around_list_view_style"
+        android:divider="#0000"
+        android:dividerHeight="0dp"/>
+
+    <LinearLayout
+        android:id="@+id/popwin_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"/>
+
+</LinearLayout>
