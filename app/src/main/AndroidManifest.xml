@@ -16,6 +16,14 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- SD卡读取权限，用户写入离线定位数据-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
 
     <application
         android:name=".common.CoolApplication"
@@ -25,11 +33,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="name">
-        <application>
-            <meta-data
-                android:name="com.baidu.lbsapi.API_KEY"
-                android:value="yldI70w7zBN0uSprrgfcrumRQktzspPK"/>
-        </application>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="yldI70w7zBN0uSprrgfcrumRQktzspPK"/>
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        </service>
 
         <activity android:name=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.SplashActivity">

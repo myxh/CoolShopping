@@ -1,10 +1,12 @@
 package com.myxh.coolshopping.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.network.HttpListener;
+import com.myxh.coolshopping.ui.activity.LocationActivity;
 import com.myxh.coolshopping.ui.base.BaseFragment;
 import com.yolanda.nohttp.rest.Response;
 
@@ -102,6 +105,18 @@ public class AroundFragment extends BaseFragment implements HttpListener<String>
     private void initView(View view) {
         mToolbar = (Toolbar) view.findViewById(R.id.around_toolbar);
         mToolbar.inflateMenu(R.menu.around_title_menu);
+        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.around_toolbar_menu_map:
+                        Intent intent = new Intent(getActivity(), LocationActivity.class);
+                        getActivity().startActivity(intent);
+                        break;
+                }
+                return true;
+            }
+        });
 
         mSupplierListTitleTv = (TextView) view.findViewById(R.id.around_supplier_list_title_tv);
         mSupplierListCartIv = (ImageView) view.findViewById(R.id.around_supplier_list_cart_iv);

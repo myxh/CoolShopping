@@ -6,7 +6,7 @@
     tools:context=".ui.activity.MainActivity">
 
     <item
-        android:id="@+id/around_toolbar_action_edit"
+        android:id="@+id/around_toolbar_menu_map"
         android:title="@string/around_toolbar_action_edit"
         android:orderInCategory="80"
         android:icon="@mipmap/right_map_white"
