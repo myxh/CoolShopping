@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.myxh.coolshopping.ui.activity.DetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detail_layout_buy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_layout_buy_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"></RelativeLayout>
+
+</RelativeLayout>

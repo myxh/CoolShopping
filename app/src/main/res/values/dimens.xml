@@ -94,4 +94,5 @@
     <dimen name="item_popowin_tv_height">45dp</dimen>
     <dimen name="item_popowin_paddingLR">15dp</dimen>
     <dimen name="item_film_ll_marginLR">5dp</dimen>
+    <dimen name="detail_layout_buy_height">60dp</dimen>
 </resources>
