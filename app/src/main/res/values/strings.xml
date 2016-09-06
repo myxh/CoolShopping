@@ -20,4 +20,15 @@
     <string name="around_supplier_list_sort">综合排序</string>
     <string name="around_supplier_list_activity">优惠活动</string>
     <string name="around_toolbar_action_edit">编辑</string>
+    <string name="detail_sure_anytime">随时退</string>
+    <string name="detail_sure_overdue">过期退</string>
+    <string name="detail_sure_sevenday">七天退</string>
+    <string name="detail_merchant_info">商家信息</string>
+    <string name="detail_desc_title_currentOrder">本单详情</string>
+    <string name="detail_desc_title_tips">温馨提示</string>
+    <string name="detail_desc_title_recommend">看了又看</string>
+    <string name="detail_desc_check_detail">查看图文详情</string>
+    <string name="detail_bottom_buy">立即购买</string>
+    <string name="detail_bottom_retail_price">门市价</string>
+    <string name="detail_bought">已售</string>
 </resources>

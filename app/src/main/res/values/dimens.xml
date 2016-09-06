@@ -15,6 +15,15 @@
     <dimen name="textSize_18">18.0sp</dimen>
     <dimen name="textSize_19">19.0sp</dimen>
     <dimen name="textSize_20">20.0sp</dimen>
+    <dimen name="textSize_21">21.0sp</dimen>
+    <dimen name="textSize_22">22.0sp</dimen>
+    <dimen name="textSize_23">23.0sp</dimen>
+    <dimen name="textSize_24">24.0sp</dimen>
+    <dimen name="textSize_25">25.0sp</dimen>
+    <dimen name="textSize_26">26.0sp</dimen>
+    <dimen name="textSize_27">27.0sp</dimen>
+    <dimen name="textSize_28">28.0sp</dimen>
+    <dimen name="textSize_29">29.0sp</dimen>
     <dimen name="size_17">12.0sp</dimen>
     <dimen name="size_18">13.0sp</dimen>
     <dimen name="size_19">14.0sp</dimen>
@@ -95,4 +104,19 @@
     <dimen name="item_popowin_paddingLR">15dp</dimen>
     <dimen name="item_film_ll_marginLR">5dp</dimen>
     <dimen name="detail_layout_buy_height">60dp</dimen>
+    <dimen name="detail_photo_height">200dp</dimen>
+    <dimen name="detail_view_height">1dp</dimen>
+    <dimen name="detail_sure_icon_width">15dp</dimen>
+    <dimen name="detail_sure_icon_height">15dp</dimen>
+    <dimen name="detail_sure_text_marginLeft">5dp</dimen>
+    <dimen name="detail_sure_layout_marginRight">10dp</dimen>
+    <dimen name="detail_merchant_info_layout_marginTop">15dp</dimen>
+    <dimen name="detail_view_marginTop">3dp</dimen>
+    <dimen name="detail_desc_ll_padding">5dp</dimen>
+    <dimen name="detail_desc_check_layout_padding">5dp</dimen>
+    <dimen name="detail_title_layout_padding">5dp</dimen>
+    <dimen name="detail_layout_buy_price_marginLeft">3dp</dimen>
+    <dimen name="detail_merchant_detail_layout_padding">5dp</dimen>
+    <dimen name="detail_product_info_layout_padding">10dp</dimen>
+    <dimen name="detail_desc_ll_marginTop">10dp</dimen>
 </resources>

@@ -34,6 +34,12 @@
         <item name="android:background">@color/around_view_bg_color</item>
     </style>
 
+    <style name="detail_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/detail_view_height</item>
+        <item name="android:background">@mipmap/line_divide_vertical</item>
+    </style>
+
     <style name="popwin_anim_style">
         <item name="android:windowEnterAnimation">@anim/anim_still</item>
         <item name="android:windowExitAnimation">@anim/anim_still</item>

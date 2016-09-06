@@ -30,6 +30,7 @@ import com.myxh.coolshopping.entity.HomeGridInfo;
 import com.myxh.coolshopping.listener.ViewPagerListener;
 import com.myxh.coolshopping.network.CallServer;
 import com.myxh.coolshopping.network.HttpListener;
+import com.myxh.coolshopping.ui.activity.DetailActivity;
 import com.myxh.coolshopping.ui.adapter.BannerPagerAdapter;
 import com.myxh.coolshopping.ui.adapter.GoodsListAdapter;
 import com.myxh.coolshopping.ui.adapter.GridAdapter;
@@ -52,9 +53,14 @@ import java.util.List;
  */
 public class HomeFragment extends BaseFragment implements HttpListener<String> {
 
-    public static final int GOOD_REQUEST = 0x01;
-    public static final int FILM_REQUEST = 0x02;
-    public static final int SCAN_QR_REQUEST = 103;
+    private static final int GOOD_REQUEST = 0x01;
+    private static final int FILM_REQUEST = 0x02;
+    private static final int SCAN_QR_REQUEST = 103;
+    public static final String GOODS_ID = "goodsId";
+    public static final String GOODS_SEVEN_REFUND = "sevenRefund";
+    public static final String GOODS_TIME_REFUND = "timeRefund";
+    public static final String GOODS_BOUGHT = "bought";
+
     private int[] imgRes = new int[]{R.drawable.banner01,R.drawable.banner02,R.drawable.banner03};
     private Handler mHandler = new Handler();
 
@@ -74,10 +80,12 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_home,null);
-        initData();
-        initViews(mView);
-        antoScroll();
+        if (mView ==null) {
+            mView = inflater.inflate(R.layout.fragment_home,null);
+            initData();
+            initViews(mView);
+            antoScroll();
+        }
         return mView;
     }
 
@@ -164,6 +172,19 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
 //        mListView.addHeaderView(bannerView);
         mListView.addHeaderView(headView);
         mListView.setHeaderDividersEnabled(false);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString(GOODS_ID,mGoodlist.get(i-1).getGoods_id());
+                bundle.putString(GOODS_SEVEN_REFUND,mGoodlist.get(i-1).getSeven_refund());
+                bundle.putInt(GOODS_TIME_REFUND,mGoodlist.get(i-1).getTime_refund());
+                bundle.putInt(GOODS_BOUGHT,mGoodlist.get(i-1).getBought());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initTitlebar(View view) {
