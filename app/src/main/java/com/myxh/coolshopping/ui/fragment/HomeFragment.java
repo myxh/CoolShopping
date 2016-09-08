@@ -6,9 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +31,7 @@ import com.myxh.coolshopping.ui.activity.DetailActivity;
 import com.myxh.coolshopping.ui.adapter.BannerPagerAdapter;
 import com.myxh.coolshopping.ui.adapter.GoodsListAdapter;
 import com.myxh.coolshopping.ui.adapter.GridAdapter;
-import com.myxh.coolshopping.ui.adapter.HeadPageAdapter;
+import com.myxh.coolshopping.ui.adapter.ViewPageAdapter;
 import com.myxh.coolshopping.ui.base.BaseFragment;
 import com.myxh.coolshopping.ui.widget.Indicator;
 import com.myxh.coolshopping.util.ToastUtil;
@@ -163,7 +160,7 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
         });
         mViewList.add(pageOne);
         mViewList.add(pageTwo);
-        headPager.setAdapter(new HeadPageAdapter(mViewList));
+        headPager.setAdapter(new ViewPageAdapter(mViewList));
         headPager.addOnPageChangeListener(new ViewPagerListener(headIndicator));
         //热门电影
         View filmView = headView.findViewById(R.id.home_head_include_film);

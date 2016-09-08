@@ -32,6 +32,7 @@
                 android:divider="@null"
                 android:background="@android:color/white"
                 android:layout_gravity="bottom"
+                android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </TabWidget>

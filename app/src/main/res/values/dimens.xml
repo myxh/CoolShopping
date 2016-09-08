@@ -3,7 +3,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <!-- 标题栏 -->
+    <dimen name="textSize_6">6.0sp</dimen>
+    <dimen name="textSize_7">7.0sp</dimen>
+    <dimen name="textSize_8">8.0sp</dimen>
+    <dimen name="textSize_9">9.0sp</dimen>
     <dimen name="textSize_10">10.0sp</dimen>
     <dimen name="textSize_11">11.0sp</dimen>
     <dimen name="textSize_12">12.0sp</dimen>
@@ -35,6 +38,8 @@
     <dimen name="common_divider_height">10.0dip</dimen>
     <dimen name="section_text_size">18.0sp</dimen>
     <dimen name="location_lay_width">74dp</dimen>
+
+    <!-- 标题栏 -->
     <dimen name="titleBar_scan_img_paddingLeft">10dp</dimen>
     <dimen name="titleBar_scan_img_paddingRight">10dp</dimen>
     <dimen name="titleBar_news_num_marginLeft">-9dp</dimen>
@@ -115,8 +120,26 @@
     <dimen name="detail_desc_ll_padding">5dp</dimen>
     <dimen name="detail_desc_check_layout_padding">5dp</dimen>
     <dimen name="detail_title_layout_padding">5dp</dimen>
+    <dimen name="detail_title_tv_marginLR">10dp</dimen>
     <dimen name="detail_layout_buy_price_marginLeft">3dp</dimen>
     <dimen name="detail_merchant_detail_layout_padding">5dp</dimen>
     <dimen name="detail_product_info_layout_padding">10dp</dimen>
     <dimen name="detail_desc_ll_marginTop">10dp</dimen>
+
+    <dimen name="image_bottom_layout_padding">20dp</dimen>
+
+    <dimen name="me_login_layout_height">90dp</dimen>
+    <dimen name="me_login_head_width">65dp</dimen>
+    <dimen name="me_login_head_height">60dp</dimen>
+    <dimen name="me_login_layout_paddingLeft">15dp</dimen>
+    <dimen name="me_login_head_marginEnd">10dp</dimen>
+    <dimen name="me_login_level_width">28dp</dimen>
+    <dimen name="me_login_level_height">22dp</dimen>
+    <dimen name="me_login_profile_layout_marginStart">10dp</dimen>
+    <dimen name="me_login_level_marginStart">5dp</dimen>
+    <dimen name="me_login_balance_layout_marginTop">5dp</dimen>
+    <dimen name="me_login_username_size">@dimen/textSize_20</dimen>
+    <dimen name="me_login_balance_size">@dimen/textSize_16</dimen>
+    <dimen name="me_nologin_textSize">@dimen/textSize_14</dimen>
+    <dimen name="me_item_common_layout_marginTop">10dp</dimen>
 </resources>

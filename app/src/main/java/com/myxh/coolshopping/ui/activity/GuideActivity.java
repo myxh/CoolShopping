@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.myxh.coolshopping.R;
-import com.myxh.coolshopping.ui.adapter.GuidePageAdapter;
+import com.myxh.coolshopping.ui.adapter.ViewPageAdapter;
 import com.myxh.coolshopping.ui.base.BaseActivity;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class GuideActivity extends BaseActivity {
     private ViewPager pager;
     private Button mBtnStart;
     private List<View> mViewList = new ArrayList<>();
-    private GuidePageAdapter mPageAdapter;
+    private ViewPageAdapter mPageAdapter;
 
     private int[] imgRes = new int[] {
             R.mipmap.guide_1,R.mipmap.guide_2,
@@ -46,7 +46,7 @@ public class GuideActivity extends BaseActivity {
             imageView.setBackgroundResource(imgRes[i]);
             mViewList.add(view);
         }
-        mPageAdapter = new GuidePageAdapter(mViewList);
+        mPageAdapter = new ViewPageAdapter(mViewList);
     }
 
     private void initViews() {

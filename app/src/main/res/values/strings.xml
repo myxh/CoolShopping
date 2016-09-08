@@ -31,4 +31,23 @@
     <string name="detail_bottom_buy">立即购买</string>
     <string name="detail_bottom_retail_price">门市价</string>
     <string name="detail_bought">已售</string>
+
+
+    <string name="me_login_balance">账户余额:</string>
+    <string name="me_nologin_not_login">您还没有登录哦</string>
+    <string name="me_nologin_login">立即登录</string>
+    <string name="me_user_coupons">优惠券</string>
+    <string name="me_user_cart">购物车</string>
+    <string name="me_user_favorite">收藏</string>
+    <string name="me_user_history">最近浏览</string>
+    <string name="me_item_unpaid_order">待付款订单</string>
+    <string name="me_item_paid_order">已付款订单</string>
+    <string name="me_item_lottery_order">抽奖单</string>
+    <string name="me_item_treasure_order">夺宝单</string>
+    <string name="me_item_unpaid_uncomment">未评价</string>
+    <string name="me_item_bankcard">我的银行卡</string>
+    <string name="me_item_bankcard_go_complete">去完善</string>
+    <string name="me_item_recommend">每日推荐</string>
+    <string name="me_item_coupons">抵用券</string>
+    <string name="me_item_qr">扫一扫</string>
 </resources>

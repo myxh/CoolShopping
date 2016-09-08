@@ -12,6 +12,9 @@
     <color name="gray">#ff666666</color>
     <color name="gray_2">#ffdcdcdc</color>
     <color name="color_f6">#fff6f6f6</color>
+    <color name="app_bg">#fff7f7f7</color>
+    <color name="app_gray">#ffeeeeee</color>
+    <color name="app_yellow">#ffff4c06</color>
 
     <color name="tab_selected">#fb773b</color>
     <color name="tab_normal">#c5c9d0</color>
@@ -36,7 +39,6 @@
     <color name="textColor_32">#ff323232</color>
     <color name="title_bar_search_color">#ffe55c26</color>
     <color name="title_bar_search_text_color">#ffffa37e</color>
-    <color name="app_yellow">#ffff4c06</color>
 
     <!-- GoodsListItem 首页最下面的listView -->
     <color name="title_color">#ffff621d</color>
@@ -52,4 +54,8 @@
     <color name="around_view_bg_color">#e2e2e2</color>
     <color name="around_supplier_title_selected_color">#39ac69</color>
     <color name="detail_merchant_info_color">#ff3c3c3c</color>
+
+    <!-- 登录界面 -->
+    <color name="orange">#ffff6900</color>
+    <color name="content_color">#ff687186</color>
 </resources>

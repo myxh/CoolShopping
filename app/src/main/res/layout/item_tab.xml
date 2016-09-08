@@ -8,12 +8,13 @@
     <ImageView
         android:id="@+id/item_tab_iv"
         android:src="@drawable/tab_home_selector"
-        android:layout_width="25dp"
-        android:layout_height="25dp"/>
+        android:layout_width="22dp"
+        android:layout_height="22dp"/>
     <TextView
         android:id="@+id/item_tab_tv"
         android:textColor="@drawable/tab_text_selector"
-        android:textSize="@dimen/textSize_14"
+        android:textSize="@dimen/textSize_12"
+        android:text="首页"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

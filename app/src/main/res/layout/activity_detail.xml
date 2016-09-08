@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/detail_layout_buy">
-        <ScrollView
+        <com.myxh.coolshopping.ui.widget.ObserverScrollView
+            android:id="@+id/detail_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
@@ -23,7 +24,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/detail_photo_height"
                     android:scaleType="centerCrop"
-                    app:placeholderImage="@mipmap/a01"/>
+                    app:placeholderImage="@mipmap/home_adver_320"/>
                 <View
                     style="@style/detail_view_style"/>
                 <LinearLayout
@@ -153,7 +154,7 @@
                             android:layout_height="wrap_content"
                             android:padding="5dp"
                             tools:text="兴鑫宾馆"
-                            android:textSize="@dimen/textSize_17"/>
+                            android:textSize="@dimen/textSize_16"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -202,11 +203,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
-        </ScrollView>
-        <RelativeLayout
-            android:id="@+id/detail_title_rl_layout"
+        </com.myxh.coolshopping.ui.widget.ObserverScrollView>
+        <LinearLayout
+            android:id="@+id/detail_title_layout"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:orientation="horizontal"
             android:layout_alignParentTop="true"
             android:padding="@dimen/detail_title_layout_padding">
             <ImageView
@@ -216,11 +218,17 @@
                 android:src="@mipmap/icon_back_black"/>
             <TextView
                 android:id="@+id/detail_title_tv_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/detail_title_tv_marginLR"
+                android:layout_marginStart="@dimen/detail_title_tv_marginLR"
+                android:gravity="center"
                 tools:text="国际酒店"
-                android:textSize="@dimen/textSize_24"/>
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="@dimen/textSize_20"/>
             <ImageView
                 android:id="@+id/detail_title_iv_favorite"
                 android:layout_toLeftOf="@+id/detail_title_iv_share"
@@ -234,7 +242,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:src="@mipmap/icon_share_black"/>
-        </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout

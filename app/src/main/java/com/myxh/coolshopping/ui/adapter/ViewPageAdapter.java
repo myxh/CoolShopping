@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * Created by asus on 2016/9/1.
  */
-public class HeadPageAdapter extends PagerAdapter {
+public class ViewPageAdapter extends PagerAdapter {
 
     private List<View> mViews;
 
-    public HeadPageAdapter(List<View> views) {
+    public ViewPageAdapter(List<View> views) {
         mViews = views;
     }
 

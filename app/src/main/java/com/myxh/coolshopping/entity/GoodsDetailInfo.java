@@ -1,11 +1,12 @@
 package com.myxh.coolshopping.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by asus on 2016/9/6.
  */
-public class GoodsDetailInfo {
+public class GoodsDetailInfo implements Serializable {
 
     /**
      * ret : 10000
@@ -81,7 +82,7 @@ public class GoodsDetailInfo {
         this.token = token;
     }
 
-    public static class ResultBean {
+    public static class ResultBean implements Serializable{
         private String goods_id;
         private String goods_type;
         private String product;
@@ -338,16 +339,16 @@ public class GoodsDetailInfo {
             this.group_recommend = group_recommend;
         }
 
-        public static class CommentBean {
+        public static class CommentBean implements Serializable{
         }
 
-        public static class SignitureBean {
+        public static class SignitureBean implements Serializable{
         }
 
-        public static class LashouPriceBean {
+        public static class LashouPriceBean implements Serializable{
         }
 
-        public static class ImagesBean {
+        public static class ImagesBean implements Serializable {
             private int width;
             private String image;
 
