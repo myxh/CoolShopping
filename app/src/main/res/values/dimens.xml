@@ -36,6 +36,7 @@
     <dimen name="size_23">17.0sp</dimen>
     <dimen name="size_24">19.0sp</dimen>
     <dimen name="common_divider_height">10.0dip</dimen>
+    <dimen name="common_titleBar_height">50dp</dimen>
     <dimen name="section_text_size">18.0sp</dimen>
     <dimen name="location_lay_width">74dp</dimen>
 
@@ -142,4 +143,19 @@
     <dimen name="me_login_balance_size">@dimen/textSize_16</dimen>
     <dimen name="me_nologin_textSize">@dimen/textSize_14</dimen>
     <dimen name="me_item_common_layout_marginTop">10dp</dimen>
+    <dimen name="login_titleBar_login_size">@dimen/textSize_20</dimen>
+    <dimen name="login_titleBar_register_size">@dimen/textSize_16</dimen>
+    <dimen name="login_bottom_icon_marginLeft">20dp</dimen>
+    <dimen name="login_bottom_icon_layout_marginTop">10dp</dimen>
+    <dimen name="login_select_line_height">3dp</dimen>
+    <dimen name="login_layout_marginTop">25dp</dimen>
+    <dimen name="login_account_login_checkBox_width">70dp</dimen>
+    <dimen name="login_account_login_checkBox_height">40dp</dimen>
+    <dimen name="login_account_login_checkBox_marginEnd">5dp</dimen>
+    <dimen name="login_quick_login_getCode_width">100dp</dimen>
+    <dimen name="login_quick_login_getCode_height">42dp</dimen>
+    <dimen name="login_quick_login_getCode_marginRight">8dp</dimen>
+    <dimen name="login_content_size">@dimen/textSize_14</dimen>
+    <dimen name="login_account_login_forget_password_marginTop">15dp</dimen>
+    <dimen name="login_account_login_forget_password_marginRight">10dp</dimen>
 </resources>

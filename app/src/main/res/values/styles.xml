@@ -33,6 +33,11 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="base_imageView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
     <style name="around_view_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
@@ -117,6 +122,75 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/gray01</item>
         <item name="android:textSize">@dimen/textSize_12</item>
+    </style>
+    
+    <style name="common_left_back_imageView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:src">@mipmap/icon_back</item>
+        <item name="android:background">@drawable/back_img_selector</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="common_right_title_textView_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/back_img_selector</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--快速登录和账号登录-->
+    <style name="login_select_textView_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/orange_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/content_color</item>
+        <item name="android:textSize">@dimen/textSize_18</item>
+    </style>
+
+    <!--登录输入框样式-->
+    <style name="login_editText_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/gray01</item>
+        <item name="android:textSize">@dimen/textSize_14</item>
+    </style>
+
+    <!--清空输入框样式-->
+    <style name="common_clear_input_imageView_style">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:src">@mipmap/delete_username</item>
+    </style>
+
+    <!--登录按钮样式-->
+    <style name="login_btn_style" parent="Base.Widget.AppCompat.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:background">@drawable/round_btn_orange_self_selector</item>
+        <item name="android:enabled">false</item>
+        <item name="android:text">@string/login_titleBar_login</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/textSize_18</item>
     </style>
 
 </resources>

@@ -50,4 +50,15 @@
     <string name="me_item_recommend">每日推荐</string>
     <string name="me_item_coupons">抵用券</string>
     <string name="me_item_qr">扫一扫</string>
+    <string name="login_titleBar_login">登录</string>
+    <string name="login_titleBar_register">注册</string>
+    <string name="login_bottom_use_third_account">使用第三方账号登陆</string>
+    <string name="login_select_quick_login">快速登录</string>
+    <string name="login_select_account_login">账号登录</string>
+    <string name="login_input_username_hint">请输入手机号/邮箱/用户名</string>
+    <string name="login_input_phoneNumber_hint">请输入手机号</string>
+    <string name="login_input_password_hint">请输入密码</string>
+    <string name="login_input_check_code_hint">验证码</string>
+    <string name="login_input_btn_get_code">获取验证码</string>
+    <string name="login_account_forget_password">忘记密码</string>
 </resources>
