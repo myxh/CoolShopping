@@ -111,19 +111,10 @@
                     <EditText
                         android:id="@+id/login_quick_login_et_code"
                         style="@style/login_editText_style"
-                        android:hint="@string/login_input_password_hint"/>
+                        android:hint="@string/login_input_check_code_hint"/>
                     <Button
                         android:id="@+id/login_quick_login_btn_getCode"
-                        android:layout_width="@dimen/login_quick_login_getCode_width"
-                        android:layout_height="@dimen/login_quick_login_getCode_height"
-                        android:layout_marginRight="@dimen/login_quick_login_getCode_marginRight"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/btn_get_code_selector"
-                        android:gravity="center"
-                        android:text="@string/login_input_btn_get_code"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/textSize_14"/>
+                        style="@style/login_btn_getCode_style"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/ll_check_picture"
@@ -192,12 +183,7 @@
                         android:hint="@string/login_input_password_hint"/>
                     <CheckBox
                         android:id="@+id/login_account_login_checkBox"
-                        android:layout_width="@dimen/login_account_login_checkBox_width"
-                        android:layout_height="@dimen/login_account_login_checkBox_height"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="@dimen/login_account_login_checkBox_marginEnd"
-                        android:button="@drawable/passwd_bg_selector"/>
+                        style="@style/login_checkBox_style"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/ll_check_code"

@@ -58,7 +58,7 @@
     <string name="login_input_username_hint">请输入手机号/邮箱/用户名</string>
     <string name="login_input_phoneNumber_hint">请输入手机号</string>
     <string name="login_input_password_hint">请输入密码</string>
-    <string name="login_input_check_code_hint">验证码</string>
+    <string name="login_input_check_code_hint">请输入验证码</string>
     <string name="login_input_btn_get_code">获取验证码</string>
     <string name="login_account_forget_password">忘记密码</string>
 </resources>

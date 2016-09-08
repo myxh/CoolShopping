@@ -160,6 +160,7 @@
     <style name="login_editText_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:padding">16dp</item>
         <item name="android:scrollHorizontally">true</item>
@@ -191,6 +192,30 @@
         <item name="android:text">@string/login_titleBar_login</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/textSize_18</item>
+    </style>
+
+    <!--获取验证码按钮样式-->
+    <style name="login_btn_getCode_style" parent="Base.Widget.AppCompat.Button">
+        <item name="android:layout_width">@dimen/login_quick_login_getCode_width</item>
+        <item name="android:layout_height">@dimen/login_quick_login_getCode_height</item>
+        <item name="android:layout_marginRight">@dimen/login_quick_login_getCode_marginRight</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/btn_get_code_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/login_input_btn_get_code</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/login_content_size</item>
+    </style>
+
+    <!--切换显示明文密码-->
+    <style name="login_checkBox_style">
+        <item name="android:layout_width">@dimen/login_account_login_checkBox_width</item>
+        <item name="android:layout_height">@dimen/login_account_login_checkBox_height</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:button">@drawable/passwd_bg_selector</item>
     </style>
 
 </resources>
