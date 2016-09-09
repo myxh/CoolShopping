@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
+            android:id="@+id/login_titleBar_tv_register"
             style="@style/common_right_title_textView_style"
             android:gravity="center"
             android:text="@string/login_titleBar_register"
@@ -89,67 +90,85 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/login_layout_marginTop"
-                android:orientation="vertical"
-                android:background="@color/app_white">
-                <RelativeLayout
+                android:orientation="vertical">
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/login_quick_login_et_username"
-                        style="@style/login_editText_style"
-                        android:background="@null"
-                        android:hint="@string/login_input_phoneNumber_hint"/>
-                    <ImageView
-                        android:id="@+id/login_quick_login_iv_clear"
-                        style="@style/common_clear_input_imageView_style"/>
-                </RelativeLayout>
-                <View
-                    style="@style/me_horizontal_view_style"/>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/login_quick_login_et_code"
-                        style="@style/login_editText_style"
-                        android:hint="@string/login_input_check_code_hint"/>
-                    <Button
-                        android:id="@+id/login_quick_login_btn_getCode"
-                        style="@style/login_btn_getCode_style"/>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/ll_check_picture"
-                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:visibility="gone" >
-
+                    android:orientation="vertical"
+                    android:background="@color/app_white">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/login_quick_login_et_phoneNumber"
+                            style="@style/login_editText_style"
+                            android:inputType="number"
+                            android:maxLength="11"
+                            android:hint="@string/login_input_phoneNumber_hint"/>
+                        <ImageView
+                            android:id="@+id/login_quick_login_iv_clear_phoneNumber"
+                            android:visibility="gone"
+                            style="@style/common_clear_input_imageView_style"/>
+                    </RelativeLayout>
                     <View
+                        style="@style/me_horizontal_view_style"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/login_quick_login_et_code"
+                            style="@style/login_editText_style"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:hint="@string/login_input_check_code_hint"/>
+                        <Button
+                            android:id="@+id/login_quick_login_btn_getCode"
+                            style="@style/login_btn_getCode_style"/>
+                        <ImageView
+                            android:id="@+id/login_quick_login_iv_clear_code"
+                            android:layout_toLeftOf="@+id/login_quick_login_btn_getCode"
+                            android:layout_alignParentRight="false"
+                            android:visibility="gone"
+                            style="@style/common_clear_input_imageView_style"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/ll_check_picture"
                         android:layout_width="fill_parent"
-                        android:layout_height="1.0dip"
-                        android:layout_marginLeft="14.0dip"
-                        android:background="#ffdadada" />
-
-                    <EditText
-                        android:id="@+id/et_check_picture"
-                        android:layout_width="120.0dip"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:background="@null"
-                        android:hint="验证图片"
-                        android:padding="16.0dip"
-                        android:scrollHorizontally="true"
-                        android:singleLine="true"
-                        android:textColorHint="@color/gray01"
-                        android:textSize="@dimen/size_24" />
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
 
-                    <ImageView
-                        android:id="@+id/iv_check_picture"
-                        android:layout_width="50.0dip"
-                        android:layout_height="30.0dip"
-                        android:layout_centerVertical="true"
-                        android:layout_toRightOf="@id/et_check_picture"
-                        android:scaleType="fitXY" />
-                </RelativeLayout>
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1.0dip"
+                            android:layout_marginLeft="14.0dip"
+                            android:background="#ffdadada" />
+
+                        <EditText
+                            android:id="@+id/et_check_picture"
+                            android:layout_width="120.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:hint="验证图片"
+                            android:padding="16.0dip"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColorHint="@color/gray01"
+                            android:textSize="@dimen/size_24" />
+
+                        <ImageView
+                            android:id="@+id/iv_check_picture"
+                            android:layout_width="50.0dip"
+                            android:layout_height="30.0dip"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/et_check_picture"
+                            android:scaleType="fitXY" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/login_quick_login_btn"
+                    style="@style/login_btn_style"/>
             </LinearLayout>
 
             <LinearLayout
@@ -158,92 +177,100 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/login_layout_marginTop"
                 android:orientation="vertical"
-                android:background="@color/app_white"
                 android:visibility="gone">
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/login_account_login_et_username"
-                        style="@style/login_editText_style"
-                        android:background="@null"
-                        android:hint="@string/login_input_username_hint"/>
-                    <ImageView
-                        android:id="@+id/login_account_login_iv_clear"
-                        style="@style/common_clear_input_imageView_style"/>
-                </RelativeLayout>
-                <View
-                    style="@style/me_horizontal_view_style"/>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/login_account_login_et_password"
-                        style="@style/login_editText_style"
-                        android:hint="@string/login_input_password_hint"/>
-                    <CheckBox
-                        android:id="@+id/login_account_login_checkBox"
-                        style="@style/login_checkBox_style"/>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/ll_check_code"
-                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:visibility="gone" >
-
+                    android:orientation="vertical"
+                    android:background="@color/app_white">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/login_account_login_et_username"
+                            style="@style/login_editText_style"
+                            android:hint="@string/login_input_username_hint"/>
+                        <ImageView
+                            android:id="@+id/login_account_login_iv_clear_username"
+                            android:visibility="gone"
+                            style="@style/common_clear_input_imageView_style"/>
+                    </RelativeLayout>
                     <View
+                        style="@style/me_horizontal_view_style"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/login_account_login_et_password"
+                            style="@style/login_editText_style"
+                            android:inputType="textPassword"
+                            android:hint="@string/login_input_password_hint"/>
+                        <CheckBox
+                            android:id="@+id/login_account_login_checkBox"
+                            style="@style/login_checkBox_style"/>
+                        <ImageView
+                            android:id="@+id/login_account_login_iv_clear_password"
+                            android:layout_toLeftOf="@+id/login_account_login_checkBox"
+                            android:layout_alignParentRight="false"
+                            android:visibility="gone"
+                            style="@style/common_clear_input_imageView_style"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/ll_check_code"
                         android:layout_width="fill_parent"
-                        android:layout_height="1.0dip"
-                        android:layout_marginLeft="14.0dip"
-                        android:background="#ffdadada" />
-
-                    <EditText
-                        android:id="@+id/et_check_code"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:background="@null"
-                        android:hint="@string/login_input_check_code_hint"
-                        android:maxWidth="150.0dip"
-                        android:padding="16.0dip"
-                        android:scrollHorizontally="true"
-                        android:singleLine="true"
-                        android:textColorHint="@color/gray01"
-                        android:textSize="@dimen/size_24" />
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
 
-                    <ImageView
-                        android:id="@+id/iv_check_code"
-                        android:layout_width="58.0dip"
-                        android:layout_height="30.0dip"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="5.0dip"
-                        android:layout_marginTop="1.0dip"
-                        android:layout_toRightOf="@id/et_check_code"
-                        android:scaleType="fitXY" />
-                </RelativeLayout>
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1.0dip"
+                            android:layout_marginLeft="14.0dip"
+                            android:background="#ffdadada" />
+
+                        <EditText
+                            android:id="@+id/et_check_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:hint="@string/login_input_check_code_hint"
+                            android:maxWidth="150.0dip"
+                            android:padding="16.0dip"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColorHint="@color/gray01"
+                            android:textSize="@dimen/size_24" />
+
+                        <ImageView
+                            android:id="@+id/iv_check_code"
+                            android:layout_width="58.0dip"
+                            android:layout_height="30.0dip"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5.0dip"
+                            android:layout_marginTop="1.0dip"
+                            android:layout_toRightOf="@id/et_check_code"
+                            android:scaleType="fitXY" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/login_account_login_btn"
+                    style="@style/login_btn_style"/>
+                <TextView
+                    android:id="@+id/login_account_login_tv_forget_password"
+                    style="@style/base_textView_style"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/login_account_login_forget_password_marginTop"
+                    android:layout_marginRight="@dimen/login_account_login_forget_password_marginRight"
+                    android:drawableRight="@mipmap/yellow_arrow"
+                    android:drawablePadding="5dp"
+                    android:text="@string/login_account_forget_password"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/login_content_size"/>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/login_quick_login_btn"
-                style="@style/login_btn_style"/>
-            <Button
-                android:id="@+id/login_account_login_btn"
-                style="@style/login_btn_style"
-                android:visibility="gone"/>
-            <TextView
-                android:id="@+id/login_account_login_tv_forget_password"
-                style="@style/base_textView_style"
-                android:layout_gravity="right"
-                android:layout_marginTop="@dimen/login_account_login_forget_password_marginTop"
-                android:layout_marginRight="@dimen/login_account_login_forget_password_marginRight"
-                android:drawableRight="@mipmap/yellow_arrow"
-                android:drawablePadding="5dp"
-                android:text="@string/login_account_forget_password"
-                android:textColor="@color/orange"
-                android:textSize="@dimen/login_content_size"/>
         </LinearLayout>
 
     </ScrollView>
@@ -260,7 +287,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/login_bottom_use_third_account"
-            android:textSize="@dimen/textSize_18"/>
+            android:textSize="@dimen/textSize_16"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

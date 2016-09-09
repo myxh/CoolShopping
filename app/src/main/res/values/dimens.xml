@@ -159,4 +159,5 @@
     <dimen name="login_account_login_forget_password_marginTop">15dp</dimen>
     <dimen name="login_account_login_forget_password_marginRight">10dp</dimen>
     <dimen name="register_content_layout_marginTop">20dp</dimen>
+    <dimen name="register_bottom_tips_marginTop">20dp</dimen>
 </resources>

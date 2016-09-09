@@ -39,12 +39,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/register_et_username"
+                    android:id="@+id/register_et_phoneNumber"
                     style="@style/login_editText_style"
+                    android:inputType="number"
+                    android:maxLength="11"
                     android:hint="@string/login_input_phoneNumber_hint"/>
                 <ImageView
-                    android:id="@+id/register_iv_clear"
-                    style="@style/common_clear_input_imageView_style"/>
+                    android:id="@+id/register_iv_clear_phoneNumber"
+                    style="@style/common_clear_input_imageView_style"
+                    android:visibility="gone"/>
             </RelativeLayout>
             <View
                 style="@style/me_horizontal_view_style"/>
@@ -60,6 +63,12 @@
                 <Button
                     android:id="@+id/register_btn_getCode"
                     style="@style/login_btn_getCode_style"/>
+                <ImageView
+                    android:id="@+id/register_iv_clear_code"
+                    android:layout_toLeftOf="@+id/register_btn_getCode"
+                    android:layout_alignParentRight="false"
+                    style="@style/common_clear_input_imageView_style"
+                    android:visibility="gone"/>
             </RelativeLayout>
             <View
                 style="@style/me_horizontal_view_style"/>
@@ -69,10 +78,17 @@
                 <EditText
                     android:id="@+id/register_et_password"
                     style="@style/login_editText_style"
+                    android:inputType="textPassword"
                     android:hint="@string/login_input_password_hint"/>
                 <CheckBox
-                    android:id="@+id/register_login_checkBox"
+                    android:id="@+id/register_password_checkBox"
                     style="@style/login_checkBox_style"/>
+                <ImageView
+                    android:id="@+id/register_iv_clear_password"
+                    android:layout_toLeftOf="@+id/register_password_checkBox"
+                    android:layout_alignParentRight="false"
+                    android:visibility="gone"
+                    style="@style/common_clear_input_imageView_style"/>
             </RelativeLayout>
             <View
                 style="@style/me_horizontal_view_style"/>
@@ -82,7 +98,12 @@
                 <EditText
                     android:id="@+id/register_et_repassword"
                     style="@style/login_editText_style"
-                    android:hint="@string/login_input_password_hint"/>
+                    android:inputType="textPassword"
+                    android:hint="@string/login_input_repassword_hint"/>
+                <ImageView
+                    android:id="@+id/register_iv_clear_repassword"
+                    android:visibility="gone"
+                    style="@style/common_clear_input_imageView_style"/>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
@@ -91,10 +112,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/register_bottom_tips_marginTop"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:text="注意注意"/>
+        android:text="@string/register_tips"
+        android:textColor="@color/gray01"/>
 
     <Button
         android:id="@+id/register_btn_register"

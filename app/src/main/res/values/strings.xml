@@ -61,4 +61,7 @@
     <string name="login_input_check_code_hint">请输入验证码</string>
     <string name="login_input_btn_get_code">获取验证码</string>
     <string name="login_account_forget_password">忘记密码</string>
+    <string name="login_input_repassword_hint">请确认密码</string>
+    <string name="register_tips">登录密码为6位以上数字和字母的组合，区分大小写</string>
+    <string name="reSend">重新发送</string>
 </resources>

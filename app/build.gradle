@@ -44,4 +44,5 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-Core-2.7.7.jar')
     compile files('libs/ShareSDK-Wechat-Favorite-2.7.7.jar')
     compile files('libs/ShareSDK-Wechat-Moments-2.7.7.jar')
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

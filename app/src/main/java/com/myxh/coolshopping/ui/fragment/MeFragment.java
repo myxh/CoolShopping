@@ -1,5 +1,6 @@
 package com.myxh.coolshopping.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.myxh.coolshopping.R;
+import com.myxh.coolshopping.ui.activity.LoginActivity;
 import com.myxh.coolshopping.ui.base.BaseFragment;
 
 /**
@@ -112,7 +114,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.me_nologin_btn_login:
-
+                startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
             case R.id.me_user_tv_cart:
 
