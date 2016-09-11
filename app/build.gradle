@@ -4,12 +4,17 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
 
+    /**兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**/
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.myxh.coolshopping"
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -25,7 +30,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.yolanda.nohttp:nohttp:1.0.5'
     compile 'com.android.support:design:24.2.0'
-    compile 'com.google.code.gson:gson:2.7'
+    //    compile 'com.google.code.gson:gson:2.7'
     compile 'com.facebook.fresco:fresco:0.13.0'
     compile 'cn.yipianfengye.android:zxing-library:1.8'
     compile files('libs/BaiduLBS_Android.jar')
@@ -45,4 +50,7 @@ dependencies {
     compile files('libs/ShareSDK-Wechat-Favorite-2.7.7.jar')
     compile files('libs/ShareSDK-Wechat-Moments-2.7.7.jar')
     compile 'org.greenrobot:eventbus:3.0.0'
+    //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
+    compile project(':libs_PullToRefresh')
 }

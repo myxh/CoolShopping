@@ -1,0 +1,126 @@
+[
+    {
+        "outputFile": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko\\values-ko.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 65,
+                    "endOffset": 116
+                },
+                "from": {
+                    "file": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 65,
+                        "endOffset": 116
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 121,
+                    "endColumn": 66,
+                    "endOffset": 183
+                },
+                "from": {
+                    "file": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 121,
+                        "endColumn": 66,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 188,
+                    "endColumn": 68,
+                    "endOffset": 252
+                },
+                "from": {
+                    "file": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 68,
+                        "endOffset": 252
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko\\values-ko.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 65,
+                    "endOffset": 116
+                },
+                "from": {
+                    "file": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 65,
+                        "endOffset": 116
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 121,
+                    "endColumn": 66,
+                    "endOffset": 183
+                },
+                "from": {
+                    "file": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 121,
+                        "endColumn": 66,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 188,
+                    "endColumn": 68,
+                    "endOffset": 252
+                },
+                "from": {
+                    "file": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 68,
+                        "endOffset": 252
+                    }
+                }
+            }
+        ]
+    }
+]

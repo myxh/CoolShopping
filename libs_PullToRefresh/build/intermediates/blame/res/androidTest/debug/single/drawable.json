@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\anim_refreshing_image.xml",
+        "source": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\anim_refreshing_image.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\anim_refreshing_image.xml",
+        "source": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\anim_refreshing_image.xml"
+    },
+    {
+        "merged": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "E:\\Users\\hongkl\\AndroidStudioProjects\\CaiNiao5\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    }
+]

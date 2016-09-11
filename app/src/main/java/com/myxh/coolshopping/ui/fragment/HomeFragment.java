@@ -3,6 +3,7 @@ package com.myxh.coolshopping.ui.fragment;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -19,6 +20,8 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.common.AppConstant;
 import com.myxh.coolshopping.entity.FilmInfo;
@@ -60,19 +63,24 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
 
     private int[] imgRes = new int[]{R.drawable.banner01,R.drawable.banner02,R.drawable.banner03};
     private Handler mHandler = new Handler();
-
+    //广告轮播
     private ViewPager bannerPager;
     private Indicator bannerIndicator;
     private View mView;
 
     private List<HomeGridInfo> pageOneData = new ArrayList<>();
     private List<HomeGridInfo> pageTwoData = new ArrayList<>();
-    private ListView mListView;
+    private PullToRefreshListView mRefreshListView;
     private List<View> mViewList = new ArrayList<>();
 
     private List<GoodsInfo.ResultBean.GoodlistBean> mGoodlist = new ArrayList<>();
     private List<FilmInfo.ResultBean> mFilmList = new ArrayList<>();
     private LinearLayout mFilmLayout;
+    private ListView mListView;
+    private GoodsListAdapter mGoodsListAdapter;
+
+    //是否正在刷新
+    private boolean isRefreshing = false;
 
     @Nullable
     @Override
@@ -119,14 +127,8 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
         //titleBar
         View titleView = view.findViewById(R.id.home_titlebar);
         initTitlebar(titleView);
-        mListView = (ListView) view.findViewById(R.id.home_listView);
+        mRefreshListView = (PullToRefreshListView) view.findViewById(R.id.home_pull_to_refresh_listView);
 
-        //广告条
-        /*View bannerView = LayoutInflater.from(getActivity()).inflate(R.layout.home_banner,null);
-        bannerPager = (ViewPager) bannerView.findViewById(R.id.home_banner_pager);
-        bannerIndicator = (Indicator) bannerView.findViewById(R.id.home_banner_indicator);
-        bannerPager.setAdapter(new BannerPagerAdapter(getChildFragmentManager(),imgRes));
-        bannerPager.addOnPageChangeListener(new ViewPagerListener(bannerIndicator));*/
 
         //header头部
         View headView = LayoutInflater.from(getActivity()).inflate(R.layout.home_head_page,null);
@@ -166,9 +168,13 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
         View filmView = headView.findViewById(R.id.home_head_include_film);
         mFilmLayout = (LinearLayout) filmView.findViewById(R.id.home_film_ll);
 
-//        mListView.addHeaderView(bannerView);
+//        mRefreshListView.addHeaderView(bannerView);
+        mListView = mRefreshListView.getRefreshableView();
         mListView.addHeaderView(headView);
         mListView.setHeaderDividersEnabled(false);
+        int headerViewsCount = mListView.getHeaderViewsCount();
+        mGoodsListAdapter = new GoodsListAdapter(getActivity(),mGoodlist,headerViewsCount);
+        mRefreshListView.setAdapter(mGoodsListAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -180,6 +186,19 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
                 bundle.putInt(GOODS_BOUGHT,mGoodlist.get(i-1).getBought());
                 intent.putExtras(bundle);
                 startActivity(intent);
+            }
+        });
+
+        //下拉刷新
+        mRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
+            @Override
+            public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+                isRefreshing = true;
+                Request<String> goodRequest = NoHttp.createStringRequest(AppConstant.RECOMMEND_URL, RequestMethod.GET);
+                CallServer.getInstance().add(getActivity(), GOOD_REQUEST, goodRequest, HomeFragment.this, true, true);
+
+                Request<String> filmRequest = NoHttp.createStringRequest(AppConstant.HOT_FILM_URL,RequestMethod.GET);
+                CallServer.getInstance().add(getActivity(), FILM_REQUEST, filmRequest, HomeFragment.this, true, true);
             }
         });
     }
@@ -220,22 +239,26 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
 
     @Override
     public void onSucceed(int what, Response<String> response) {
+        if (isRefreshing) {
+            mRefreshListView.onRefreshComplete();
+            isRefreshing = false;
+        }
         switch (what) {
             case GOOD_REQUEST:
                 Gson gson = new Gson();
                 GoodsInfo goodsInfo = gson.fromJson(response.get(),GoodsInfo.class);
                 List<GoodsInfo.ResultBean.GoodlistBean> goodlistBeen = goodsInfo.getResult().getGoodlist();
+                mGoodlist.clear();
                 mGoodlist.addAll(goodlistBeen);
-
-                int headerViewsCount = mListView.getHeaderViewsCount();
-                GoodsListAdapter goodsListAdapter = new GoodsListAdapter(getActivity(),mGoodlist,headerViewsCount);
-                mListView.setAdapter(goodsListAdapter);
+                mGoodsListAdapter.notifyDataSetChanged();
                 break;
             case FILM_REQUEST:
                 Gson filmGson = new Gson();
                 FilmInfo filmInfo = filmGson.fromJson(response.get(),FilmInfo.class);
                 List<FilmInfo.ResultBean> filmList = filmInfo.getResult();
+                mFilmList.clear();
                 mFilmList.addAll(filmList);
+                mFilmLayout.removeAllViews();
 
                 for (int i = 0; i < mFilmList.size(); i++) {
                     View filmItemView = LayoutInflater.from(getActivity()).inflate(R.layout.item_film,null);
@@ -252,6 +275,24 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
 
     @Override
     public void onFailed(int what, Response<String> response) {
+        if (isRefreshing) {
+            mRefreshListView.onRefreshComplete();
+            isRefreshing = false;
+            ToastUtil.show(getActivity(),"刷新失败");
+        }
+    }
 
+    class NetWorkRequestTask extends AsyncTask<Void,Void,Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
     }
 }

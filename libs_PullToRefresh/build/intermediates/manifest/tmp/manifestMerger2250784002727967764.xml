@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.handmark.pulltorefresh.library.test">
+
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="4" />
+
+    <application>
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="com.handmark.pulltorefresh.library.test"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for com.handmark.pulltorefresh.library.test"/>
+</manifest>

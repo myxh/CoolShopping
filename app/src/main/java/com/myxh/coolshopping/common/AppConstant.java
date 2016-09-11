@@ -20,6 +20,11 @@ public class AppConstant {
     public static final int BAIDUMAP_LBS_TABLE_ID = 151092;
 
     /**
+     * Bmob的AppID
+     */
+    public static final String BMOB_AppID = "54a361492568a4b5d169f70622f9752f";
+
+    /**
      * 数据请求基地址
      */
     public static final String BASE_URL = "http://7xij5m.com1.z0.glb.clouddn.com/";

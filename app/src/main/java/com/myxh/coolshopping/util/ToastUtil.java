@@ -10,20 +10,37 @@ import android.widget.Toast;
 public class ToastUtil {
 
     private static Toast toast;
+    private static Toast longToast;
 
     public static void show(Context context, CharSequence text) {
-        if (toast != null) {
-            toast.makeText(context,text,Toast.LENGTH_SHORT);
+        if (toast == null) {
+            toast = Toast.makeText(context,text,Toast.LENGTH_SHORT);
         }
         toast.setText(text);
         toast.show();
     }
 
-    public static void show(Context context, @StringRes int text) {
-        if (toast != null) {
-            toast.makeText(context,text,Toast.LENGTH_SHORT);
+    public static void show(Context context, @StringRes int textRes) {
+        if (toast == null) {
+            toast = Toast.makeText(context,textRes,Toast.LENGTH_SHORT);
         }
-        toast.setText(text);
+        toast.setText(textRes);
         toast.show();
+    }
+
+    public static void showLong(Context context, CharSequence text) {
+        if (longToast == null) {
+            longToast = Toast.makeText(context,text,Toast.LENGTH_LONG);
+        }
+        longToast.setText(text);
+        longToast.show();
+    }
+
+    public static void showLong(Context context, @StringRes int textRes) {
+        if (longToast == null) {
+            longToast = Toast.makeText(context,textRes,Toast.LENGTH_LONG);
+        }
+        longToast.setText(textRes);
+        longToast.show();
     }
 }

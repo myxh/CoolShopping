@@ -8,8 +8,8 @@
         android:id="@+id/home_titlebar"
         layout="@layout/home_title_bar"/>
 
-    <ListView
-        android:id="@+id/home_listView"
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/home_pull_to_refresh_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

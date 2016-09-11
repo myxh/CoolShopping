@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -21,13 +22,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.myxh.coolshopping.R;
+import com.myxh.coolshopping.common.BmobManager;
+import com.myxh.coolshopping.listener.BmobLoginCallback;
+import com.myxh.coolshopping.listener.BmobMsgSendCallback;
 import com.myxh.coolshopping.listener.TextInputWatcher;
+import com.myxh.coolshopping.util.LoginHelperUtil;
+import com.myxh.coolshopping.util.ToastUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = LoginActivity.class.getSimpleName();
     private ImageView mTitleBarIvBack;
     private TextView mTitleBarTvRegister;
     private TextView mSelectTvQuickLogin;
@@ -76,6 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private boolean isQuickLoginSelected = true;
     private boolean isAccountLoginSelected = false;
     private int mSecCount;
+    private String mPhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -273,10 +281,45 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 mQuickLoginIvClearCode.setVisibility(View.GONE);
                 break;
             case R.id.login_quick_login_btn_getCode:
-                setCodeTimeDown();
+                mPhoneNumber = mQuickLoginEtPhoneNumber.getText().toString();
+                if (LoginHelperUtil.isPhoneNumber(mPhoneNumber)) {
+                    BmobManager.getInstance(new BmobMsgSendCallback() {
+                        @Override
+                        public void onMsgSendSuccess() {
+                            ToastUtil.show(LoginActivity.this,R.string.sms_code_send_success);
+                            //验证码发送成功，倒计时
+                            setCodeTimeDown();
+                        }
+
+                        @Override
+                        public void onMsgSendFailure() {
+                            ToastUtil.show(LoginActivity.this,R.string.sms_code_send_failure);
+                        }
+                    }).sendMsgCode(mPhoneNumber);
+                } else {
+                    ToastUtil.show(this,R.string.phone_number_incorrect);
+                }
                 break;
             case R.id.login_quick_login_btn:
+                mPhoneNumber = mQuickLoginEtPhoneNumber.getText().toString();
+                String code = mQuickLoginEtCode.getText().toString();
+                if (LoginHelperUtil.isCodeCorrect(code) && LoginHelperUtil.isPhoneNumber(mPhoneNumber)) {
+                    BmobManager.getInstance(new BmobLoginCallback() {
+                        @Override
+                        public void onLoginSuccess() {
+                            Log.i(TAG, "onLoginSuccess: 登陆成功");
+                            ToastUtil.show(LoginActivity.this,"登录成功");
+                        }
 
+                        @Override
+                        public void onLoginFailure() {
+                            Log.i(TAG, "onLoginFailure: 登陆失败");
+                            ToastUtil.show(LoginActivity.this,"登录失败");
+                        }
+                    }).signOrLoginByMsgCode(mPhoneNumber,code);
+                } else {
+                    ToastUtil.showLong(this,R.string.quick_login_input_incorrect);
+                }
                 break;
             case R.id.login_account_login_iv_clear_username:
                 mAccountLoginEtUsername.setText("");

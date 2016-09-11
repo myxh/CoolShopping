@@ -64,4 +64,8 @@
     <string name="login_input_repassword_hint">请确认密码</string>
     <string name="register_tips">登录密码为6位以上数字和字母的组合，区分大小写</string>
     <string name="reSend">重新发送</string>
+    <string name="sms_code_send_success">验证码已成功发送至您的手机，请注意查收</string>
+    <string name="phone_number_incorrect">手机号输入不正确</string>
+    <string name="sms_code_send_failure">验证码发送失败</string>
+    <string name="quick_login_input_incorrect">您的手机号或验证码输入有误</string>
 </resources>
