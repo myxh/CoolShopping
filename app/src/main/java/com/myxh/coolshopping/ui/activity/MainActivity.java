@@ -1,5 +1,6 @@
 package com.myxh.coolshopping.ui.activity;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.myxh.coolshopping.R;
+import com.myxh.coolshopping.model.User;
 import com.myxh.coolshopping.ui.base.BaseActivity;
 import com.myxh.coolshopping.ui.base.ToolbarActivity;
 import com.myxh.coolshopping.ui.fragment.AroundFragment;
@@ -36,6 +38,17 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         initViews();
+        setViewWithIntentData();
+    }
+
+    private void setViewWithIntentData() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            User user = (User) intent.getSerializableExtra(RegisterActivity.INTENT_USER);
+            if (user != null) {
+                tabhost.setCurrentTab(2);
+            }
+        }
     }
 
     private void initViews() {

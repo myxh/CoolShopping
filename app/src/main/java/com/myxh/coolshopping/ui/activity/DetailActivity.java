@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.webkit.WebView;
@@ -20,20 +20,34 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.common.AppConstant;
+import com.myxh.coolshopping.common.BmobManager;
 import com.myxh.coolshopping.entity.GoodsDetailInfo;
+import com.myxh.coolshopping.listener.BmobQueryCallback;
+import com.myxh.coolshopping.model.BaseModel;
+import com.myxh.coolshopping.model.FavorModel;
+import com.myxh.coolshopping.model.User;
 import com.myxh.coolshopping.network.CallServer;
 import com.myxh.coolshopping.network.HttpListener;
+import com.myxh.coolshopping.ui.base.BaseActivity;
 import com.myxh.coolshopping.ui.fragment.HomeFragment;
 import com.myxh.coolshopping.ui.widget.ObserverScrollView;
+import com.myxh.coolshopping.util.ToastUtil;
 import com.yolanda.nohttp.NoHttp;
 import com.yolanda.nohttp.RequestMethod;
 import com.yolanda.nohttp.rest.Request;
 import com.yolanda.nohttp.rest.Response;
 
-public class DetailActivity extends AppCompatActivity implements View.OnClickListener, HttpListener<String>,ObserverScrollView.ScrollViewListener {
+import java.util.List;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.onekeyshare.OnekeyShare;
+
+public class DetailActivity extends BaseActivity implements View.OnClickListener, HttpListener<String>,ObserverScrollView.ScrollViewListener {
 
     private static final int REQUEST_GOOD = 300;
     public static final String DETAIL_INFO = "detailInfo";
+    private static final String TAG = DetailActivity.class.getSimpleName();
     private SimpleDraweeView mProductPhoto;
     private TextView mTvProductName;
     private TextView mTvDescription;
@@ -68,6 +82,15 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     private ObserverScrollView mScrollView;
     private int mPhotoHeight;
 
+    //网络是否请求成功
+    private boolean isRequestSuccess = false;
+
+    //是否收藏
+    private boolean isFavor = false;
+    //收藏按钮是否点击
+    private boolean isClickFavor = false;
+    private FavorModel mFavoredData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +99,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         initView();
         setViewWithIntentData();
         initScrollViewListener();
+        showIsFavor();
     }
 
     private void setViewWithIntentData() {
@@ -161,10 +185,11 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 finish();
                 break;
             case R.id.detail_title_iv_favorite:
-
+                isClickFavor = true;
+                showIsFavor();
                 break;
             case R.id.detail_title_iv_share:
-
+                showShare();
                 break;
             case R.id.detail_product_photo:
                 Intent intent = new Intent(this,ImageGalleryActivity.class);
@@ -182,12 +207,14 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onSucceed(int what, Response<String> response) {
+        isRequestSuccess = true;
         switch (what) {
             case REQUEST_GOOD:
                 Gson gson = new Gson();
                 mDetailInfo = gson.fromJson(response.get(),GoodsDetailInfo.class);
                 //商品名称
                 mTvProductName.setText(mDetailInfo.getResult().getProduct());
+                //商家
                 mTvMerchantTitle.setText(mDetailInfo.getResult().getProduct());
                 //商品照片
                 mProductPhoto.setImageURI(Uri.parse(mDetailInfo.getResult().getImages().get(0).getImage()));
@@ -213,6 +240,14 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+    /**
+     * 滑动监听
+     * @param scrollView
+     * @param x
+     * @param y
+     * @param oldX
+     * @param oldY
+     */
     @Override
     public void onScroll(ObserverScrollView scrollView, int x, int y, int oldX, int oldY) {
         if (y <= 0) {
@@ -232,6 +267,170 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             mTitleTvTitle.setText(mDetailInfo.getResult().getProduct());
             mTitleTvTitle.setTextColor(Color.BLACK);
             mTitleLayout.setBackgroundColor(Color.WHITE);
+        }
+    }
+
+    /**
+     * 收藏点击
+     */
+    private void showIsFavor() {
+        final User user = User.getCurrentUser(User.class);
+        if (user == null) {
+            ToastUtil.show(this, R.string.me_nologin_not_login);
+        } else {
+            Log.i(TAG, "favorClick: 正在收藏。。。");
+            BmobManager.getInstance(new BmobQueryCallback() {
+                @Override
+                public void onQuerySuccess(List<? extends BaseModel> dataList) {
+                    Log.i(TAG, "onQuerySuccess: 收藏查询成功");
+                    List<FavorModel> favorList = (List<FavorModel>) dataList;
+                    if (favorList == null || favorList.size() == 0) {
+                        Log.i(TAG, "onQuerySuccess: 数据表为空");
+                        if (isClickFavor) {
+                            if (isRequestSuccess){
+                                Log.i(TAG, "onQuerySuccess: 请求数据成功-----正在收藏。。。。");
+                                FavorModel model = getFavorData(user);
+                                BmobManager.insertData(model);
+                                ToastUtil.show(DetailActivity.this,R.string.collect_success);
+                                isFavor = true;
+                            } else {
+                                isFavor = false;
+                                ToastUtil.show(DetailActivity.this,R.string.collect_failed);
+                                Log.i(TAG, "onQuerySuccess: 请求数据失败--------");
+                            }
+                            isClickFavor = false;
+                        } else {
+                            isFavor = false;
+                        }
+                    } else {
+                        Log.i(TAG, "onQuerySuccess: 数据表不为空");
+
+                        if (isClickFavor) {
+                            isFavor = favorDataQuery(favorList);
+                            if (isFavor) {
+                                Log.i(TAG, "onQuerySuccess: 点击收藏------已经收藏---------取消收藏");
+                                FavorModel model = new FavorModel();
+                                model.setObjectId(mFavoredData.getObjectId());
+                                BmobManager.deleteData(model);
+                                ToastUtil.show(DetailActivity.this,R.string.uncollect_success);
+                                isFavor = false;
+                            } else {
+                                if (isRequestSuccess) {
+                                    Log.i(TAG, "onQuerySuccess: 点击收藏------没有收藏---------收藏");
+                                    FavorModel model = getFavorData(user);
+                                    BmobManager.insertData(model);
+                                    ToastUtil.show(DetailActivity.this,R.string.collect_success);
+                                    isFavor = true;
+                                } else {
+                                    isFavor = false;
+                                }
+                            }
+                            isClickFavor = false;
+                        } else {
+                            isFavor = favorDataQuery(favorList);
+                        }
+                    }
+                    if (isFavor) {
+                        mTitleIvFavorite.setImageResource(R.mipmap.icon_collected_black);
+                    } else {
+                        mTitleIvFavorite.setImageResource(R.mipmap.icon_uncollect_black);
+                    }
+                }
+
+                @Override
+                public void onQueryFailure(BmobException e) {
+                    if(e.getErrorCode() == 101) {//数据表不存在，创建表
+                        if (isClickFavor) {
+                            if (isRequestSuccess) {
+                                FavorModel model = getFavorData(user);
+                                BmobManager.insertData(model);
+                                mTitleIvFavorite.setImageResource(R.mipmap.icon_collected_black);
+                                ToastUtil.show(DetailActivity.this,R.string.collect_success);
+                                isFavor = true;
+                            } else {
+                                ToastUtil.show(DetailActivity.this,R.string.collect_failed);
+                            }
+                            isClickFavor = false;
+                        }
+                    } else {
+                        Log.i(TAG, "onQueryFailure: 错误码"+e.getErrorCode());
+                        ToastUtil.show(DetailActivity.this,R.string.collect_failed);
+                    }
+                }
+            }).queryFavorData(AppConstant.KEY_USER_ID,user.getObjectId());
+
+
+        }
+    }
+
+    /**
+     * 查询收藏列表是否已经收藏
+     * @param favorList
+     */
+    private boolean favorDataQuery(List<FavorModel> favorList) {
+        int i;
+        for (i = 0; i < favorList.size(); i++) {
+            if (favorList.get(i).getGoodsId().equals(mGoodsId)) {
+                Log.i(TAG, "favorDataQuery: 查询到了-----已经收藏");
+                mFavoredData = favorList.get(i);
+                return true;
+            }
+        }
+
+        if (i == favorList.size()-1) {
+            Log.i(TAG, "favorDataQuery: 没有收藏商品-----添加收藏");
+            return false;
+        }
+        return false;
+    }
+
+    /**
+     * 获取收藏数据
+     * @param user
+     * @return
+     */
+    private FavorModel getFavorData(User user) {
+        FavorModel model = new FavorModel();
+        model.setUserId(user.getObjectId());
+        model.setGoodsId(mGoodsId);
+        model.setBought(mGoodsBought);
+        model.setImageUrl(mDetailInfo.getResult().getImages().get(0).getImage());
+        model.setProduct(mDetailInfo.getResult().getProduct());
+        model.setDescription(mDetailInfo.getResult().getTitle());
+        model.setPrice(mDetailInfo.getResult().getPrice());
+        model.setValue(mDetailInfo.getResult().getValue());
+        model.setSevenRefund(mSevenRefund);
+        model.setTimeRefund(mTimeRefund);
+        return model;
+    }
+
+    /**
+     * 社会化分享
+     */
+    private void showShare() {
+        ShareSDK.initSDK(this);
+        OnekeyShare oks = new OnekeyShare();
+        //关闭sso授权
+        oks.disableSSOWhenAuthorize();
+        if (isRequestSuccess) {
+            // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间等使用
+            oks.setTitle(mDetailInfo.getResult().getProduct());
+            // titleUrl是标题的网络链接，QQ和QQ空间等使用
+            oks.setTitleUrl(mDetailInfo.getResult().getImages().get(0).getImage());
+            // text是分享文本，所有平台都需要这个字段
+            oks.setText(mDetailInfo.getResult().getTitle());
+            // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+            //oks.setImagePath("/sdcard/test.jpg");//确保SDcard下面存在此张图片
+            // url仅在微信（包括好友和朋友圈）中使用
+            oks.setUrl("http://sharesdk.cn");
+            // comment是我对这条分享的评论，仅在人人网和QQ空间使用
+            oks.setComment("我是测试评论文本");
+            // site是分享此内容的网站名称，仅在QQ空间使用
+            oks.setSite(getString(R.string.app_name));
+            // siteUrl是分享此内容的网站地址，仅在QQ空间使用
+            oks.setSiteUrl(mDetailInfo.getResult().getImages().get(0).getImage());
+            // 启动分享GUI
+            oks.show(this);
         }
     }
 }

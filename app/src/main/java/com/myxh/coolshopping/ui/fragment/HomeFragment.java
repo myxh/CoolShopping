@@ -180,10 +180,10 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString(GOODS_ID,mGoodlist.get(i-1).getGoods_id());
-                bundle.putString(GOODS_SEVEN_REFUND,mGoodlist.get(i-1).getSeven_refund());
-                bundle.putInt(GOODS_TIME_REFUND,mGoodlist.get(i-1).getTime_refund());
-                bundle.putInt(GOODS_BOUGHT,mGoodlist.get(i-1).getBought());
+                bundle.putString(GOODS_ID,mGoodlist.get(i-2).getGoods_id());
+                bundle.putString(GOODS_SEVEN_REFUND,mGoodlist.get(i-2).getSeven_refund());
+                bundle.putInt(GOODS_TIME_REFUND,mGoodlist.get(i-2).getTime_refund());
+                bundle.putInt(GOODS_BOUGHT,mGoodlist.get(i-2).getBought());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

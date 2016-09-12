@@ -28,11 +28,12 @@ public class MoreFragment extends BaseFragment {
                 showShare();
             }
         });
-        ShareSDK.initSDK(getActivity());
+
         return view;
     }
 
     private void showShare() {
+        ShareSDK.initSDK(getActivity());
         OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
         oks.disableSSOWhenAuthorize();

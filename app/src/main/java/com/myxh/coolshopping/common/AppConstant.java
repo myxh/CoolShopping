@@ -38,4 +38,9 @@ public class AppConstant {
      * 热门电影
      */
     public static final String HOT_FILM_URL = BASE_URL + "filmHot_refresh.txt";
+
+    /**
+     * 用户ID Key(Bmob)
+     */
+    public static final String KEY_USER_ID = "userId";
 }

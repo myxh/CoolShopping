@@ -7,8 +7,9 @@ import cn.bmob.v3.datatype.BmobFile;
  * Created by asus on 2016/9/9.
  */
 public class User extends BmobUser {
-    private String sex;
     private BmobFile headIcon;
+    private String sex;
+    private float balance;
 
     public String getSex() {
         return sex;
@@ -24,5 +25,13 @@ public class User extends BmobUser {
 
     public void setHeadIcon(BmobFile headIcon) {
         this.headIcon = headIcon;
+    }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 }

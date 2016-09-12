@@ -129,6 +129,7 @@
 
     <dimen name="image_bottom_layout_padding">20dp</dimen>
 
+    <!--我的 界面-->
     <dimen name="me_login_layout_height">90dp</dimen>
     <dimen name="me_login_head_width">65dp</dimen>
     <dimen name="me_login_head_height">60dp</dimen>
@@ -143,6 +144,8 @@
     <dimen name="me_login_balance_size">@dimen/textSize_16</dimen>
     <dimen name="me_nologin_textSize">@dimen/textSize_14</dimen>
     <dimen name="me_item_common_layout_marginTop">10dp</dimen>
+
+    <!--登录 界面-->
     <dimen name="login_titleBar_login_size">@dimen/textSize_20</dimen>
     <dimen name="login_titleBar_register_size">@dimen/textSize_16</dimen>
     <dimen name="login_bottom_icon_marginLeft">20dp</dimen>

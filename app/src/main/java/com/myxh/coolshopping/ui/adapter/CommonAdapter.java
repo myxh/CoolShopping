@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by asus on 2016/9/2.
  */
-public class CommonAdapter<T> extends BaseAdapter {
+public abstract class CommonAdapter<T> extends BaseAdapter {
 
     private Context mContext;
     private List<T> mDataList;
@@ -35,9 +35,19 @@ public class CommonAdapter<T> extends BaseAdapter {
         return 0;
     }
 
-    @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
+    public Context getContext() {
+        return mContext;
+    }
 
-        return null;
+    public void setContext(Context context) {
+        mContext = context;
+    }
+
+    public List<T> getDataList() {
+        return mDataList;
+    }
+
+    public void setDataList(List<T> dataList) {
+        mDataList = dataList;
     }
 }

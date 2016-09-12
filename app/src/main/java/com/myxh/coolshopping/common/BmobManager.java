@@ -1,7 +1,10 @@
 package com.myxh.coolshopping.common;
 
+import android.util.Log;
+
 import com.myxh.coolshopping.listener.IBmobListener;
 import com.myxh.coolshopping.model.BaseModel;
+import com.myxh.coolshopping.model.FavorModel;
 import com.myxh.coolshopping.model.User;
 
 import java.util.List;
@@ -20,6 +23,7 @@ import cn.bmob.v3.listener.UpdateListener;
  * Created by asus on 2016/9/9.
  */
 public final class BmobManager {
+    private static final String TAG = BmobManager.class.getSimpleName();
     private static BmobManager bmobManager;
 
     private static IBmobListener mListener;
@@ -63,9 +67,13 @@ public final class BmobManager {
             @Override
             public void done(User user, BmobException e) {
                 if (user != null) {
-                    mListener.onLoginSuccess();
+                    if (mListener != null) {
+                        mListener.onLoginSuccess();
+                    }
                 } else {
-                    mListener.onLoginFailure();
+                    if (mListener != null) {
+                        mListener.onLoginFailure();
+                    }
                 }
             }
         });
@@ -81,15 +89,49 @@ public final class BmobManager {
             @Override
             public void done(User user, BmobException e) {
                 if(user!=null){
-                    mListener.onLoginSuccess();
+                    if (mListener != null) {
+                        mListener.onLoginSuccess();
+                    }
                 } else {
-                    mListener.onLoginFailure();
+                    if (mListener != null) {
+                        mListener.onLoginFailure();
+                    }
                 }
             }
         });
     }
 
-    public static boolean insertData(BaseModel model) {
+    /**
+     * 用户注册
+     * @param phoneNumber
+     * @param code
+     * @param password
+     */
+    public void signUp(String phoneNumber, String code, String password) {
+        User user = new User();
+        user.setMobilePhoneNumber(phoneNumber);
+        user.setUsername(phoneNumber);
+        user.setPassword(password);
+        user.setSex("男");
+        user.signOrLogin(code, new SaveListener<User>() {
+            @Override
+            public void done(User user, BmobException e) {
+                if (e == null) {
+                    mListener.onSignUpSuccess(user);
+                } else {
+                    mListener.onSignUpFailure(e);
+                }
+            }
+        });
+    }
+
+
+    /**
+     * 插入数据
+     * @param model
+     * @return
+     */
+    public static<T extends BaseModel> boolean insertData(T model) {
         final boolean[] isSuccess = {false};
         model.save(new SaveListener<String>() {
             @Override
@@ -104,7 +146,12 @@ public final class BmobManager {
         return isSuccess[0];
     }
 
-    public static boolean deleteData(BaseModel model) {
+    /**
+     * 删除数据
+     * @param model
+     * @return
+     */
+    public static<T extends BaseModel> boolean deleteData(T model) {
         final boolean[] isSuccess = {false};
         model.delete(new UpdateListener() {
             @Override
@@ -119,7 +166,12 @@ public final class BmobManager {
         return isSuccess[0];
     }
 
-    public static boolean updateData(BaseModel model) {
+    /**
+     * 更新数据
+     * @param model
+     * @return
+     */
+    public static<T extends BaseModel> boolean updateData(T model) {
         final boolean[] isSuccess = {false};
         model.update(model.getObjectId(), new UpdateListener() {
             @Override
@@ -134,22 +186,53 @@ public final class BmobManager {
         return isSuccess[0];
     }
 
-    public boolean queryData(BaseModel model, String queryKey, Object queryValue) {
-        final boolean[] isSuccess = {false};
-        BmobQuery<BaseModel> query = new BmobQuery<>();
+    /**
+     * 查询数据
+     * @param queryKey
+     * @param queryValue
+     */
+    public<U extends BaseModel> void queryData(String queryKey, Object queryValue) {
+        BmobQuery<U> query = new BmobQuery<>();
+//        Log.i(TAG, "queryData: T---------"+model.getClass().getSimpleName());
         query.addWhereEqualTo(queryKey,queryValue);
-        query.findObjects(new FindListener<BaseModel>() {
+        query.findObjects(new FindListener<U>() {
             @Override
-            public void done(List<BaseModel> list, BmobException e) {
+            public void done(List<U> list, BmobException e) {
                 if (e == null) {
-                    mListener.onQuerySuccess();
-                    isSuccess[0] = true;
+                    if (mListener != null) {
+                        mListener.onQuerySuccess(list);
+                    }
                 } else {
-                    mListener.onQueryFailure();
-                    isSuccess[0] = false;
+                    if (mListener != null) {
+                        mListener.onQueryFailure(e);
+                    }
                 }
             }
         });
-        return isSuccess[0];
     }
+
+    /**
+     * 查询我的收藏
+     * @param queryKey
+     * @param queryValue
+     */
+    public void queryFavorData(String queryKey, Object queryValue) {
+        BmobQuery<FavorModel> query = new BmobQuery<>();
+        query.addWhereEqualTo(queryKey,queryValue);
+        query.findObjects(new FindListener<FavorModel>() {
+            @Override
+            public void done(List<FavorModel> list, BmobException e) {
+                if (e == null) {
+                    if (mListener != null) {
+                        mListener.onQuerySuccess(list);
+                    }
+                } else {
+                    if (mListener != null) {
+                        mListener.onQueryFailure(e);
+                    }
+                }
+            }
+        });
+    }
+
 }

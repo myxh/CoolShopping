@@ -1,6 +1,7 @@
 package com.myxh.coolshopping.ui.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -14,8 +15,11 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.myxh.coolshopping.R;
+import com.myxh.coolshopping.model.User;
+import com.myxh.coolshopping.ui.activity.CollectActivity;
 import com.myxh.coolshopping.ui.activity.LoginActivity;
 import com.myxh.coolshopping.ui.base.BaseFragment;
+import com.myxh.coolshopping.util.ToastUtil;
 
 /**
  * Created by asus on 2016/8/27.
@@ -55,7 +59,31 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_me, null);
         initView(view);
+        initUserLayout();
         return view;
+    }
+
+    private void initUserLayout() {
+        User user = User.getCurrentUser(User.class);
+        if (user != null) {
+            mLoginLayout.setVisibility(View.VISIBLE);
+            mNologinLayout.setVisibility(View.GONE);
+            mItemBankcardLayout.setVisibility(View.VISIBLE);
+            mItemCouponsLayout.setVisibility(View.VISIBLE);
+
+            mLoginTvUsername.setText(user.getUsername());
+            mLoginTvBalance.setText(user.getBalance()+"");
+            if (user.getHeadIcon() == null) {
+                mLoginIvHead.setImageResource(R.mipmap.user_head);
+            } else {
+                mLoginIvHead.setImageURI(Uri.parse(user.getHeadIcon().getFileUrl()));
+            }
+        } else {
+            mLoginLayout.setVisibility(View.GONE);
+            mNologinLayout.setVisibility(View.VISIBLE);
+            mItemBankcardLayout.setVisibility(View.GONE);
+            mItemCouponsLayout.setVisibility(View.GONE);
+        }
     }
 
     private void initView(View view) {
@@ -117,22 +145,46 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
             case R.id.me_user_tv_cart:
+                if (User.getCurrentUser() != null) {
 
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_user_tv_favorite:
-
+                if (User.getCurrentUser() != null) {
+                    startActivity(new Intent(getActivity(), CollectActivity.class));
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_user_tv_history:
+                if (User.getCurrentUser() != null) {
 
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_item_unpaid_layout:
+                if (User.getCurrentUser() != null) {
 
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_item_paid_order_layout:
+                if (User.getCurrentUser() != null) {
 
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_item_lottery_layout:
+                if (User.getCurrentUser() != null) {
 
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_item_treasure_layout:
 

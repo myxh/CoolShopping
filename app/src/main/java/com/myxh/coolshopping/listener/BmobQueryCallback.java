@@ -1,5 +1,9 @@
 package com.myxh.coolshopping.listener;
 
+import com.myxh.coolshopping.model.User;
+
+import cn.bmob.v3.exception.BmobException;
+
 /**
  * Created by asus on 2016/9/10.
  */
@@ -25,12 +29,12 @@ public abstract class BmobQueryCallback implements IBmobListener {
     }
 
     @Override
-    public void onQueryAllSuccess() {
+    public void onSignUpSuccess(User user) {
 
     }
 
     @Override
-    public void onQueryAllFailure() {
+    public void onSignUpFailure(BmobException e) {
 
     }
 }

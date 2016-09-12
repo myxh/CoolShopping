@@ -68,4 +68,14 @@
     <string name="phone_number_incorrect">手机号输入不正确</string>
     <string name="sms_code_send_failure">验证码发送失败</string>
     <string name="quick_login_input_incorrect">您的手机号或验证码输入有误</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="collect_have_no_collection">您还没有收藏任何商品</string>
+    <string name="collect_titleBar_manager">管理</string>
+    <string name="register_password_not_consistant">两次输入的密码不一致</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_failure">注册失败</string>
+    <string name="register_input_incorrect">您输入的信息不正确，请检查你的输入</string>
+    <string name="collect_failed">收藏失败</string>
+    <string name="collect_success">收藏成功</string>
+    <string name="uncollect_success">取消收藏</string>
 </resources>
