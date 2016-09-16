@@ -78,4 +78,19 @@
     <string name="collect_failed">收藏失败</string>
     <string name="collect_success">收藏成功</string>
     <string name="uncollect_success">取消收藏</string>
+    <string name="more_item_only_wifi_show_picture">仅在WIFI下显示图片</string>
+    <string name="more_item_message_notice">消息提醒</string>
+    <string name="more_item_share_settings">分享设置</string>
+    <string name="more_item_clear_cache">清除缓存</string>
+    <string name="more_item_good_comment">赏个好评</string>
+    <string name="more_item_feedback">意见反馈</string>
+    <string name="more_item_contact_kefu">联系客服</string>
+    <string name="more_item_kefu_number">18186532328</string>
+    <string name="more_item_current_version">当前版本 V1.0</string>
+    <string name="more_item_check_update">检查更新</string>
+    <string name="more_item_about">关于</string>
+    <string name="more_item_default_cache_size">0.00KB</string>
+    <string name="more_item_kefu_hours">(8:00-22:00)</string>
+    <string name="clear_cache_success">清除缓存成功</string>
+    <string name="open_app_market_failed">打开应用商店失败</string>
 </resources>

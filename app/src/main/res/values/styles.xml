@@ -219,4 +219,24 @@
         <item name="android:button">@drawable/passwd_bg_selector</item>
     </style>
 
+    <!--****************更多界面****************-->
+    <style name="more_common_item_textView_style" parent="me_common_item_title_textView_style">
+        <item name="android:textSize">@dimen/textSize_16</item>
+    </style>
+    <style name="more_common_checkBox_style">
+        <item name="android:layout_width">47dp</item>
+        <item name="android:layout_height">23dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:background">@drawable/btn_switch</item>
+    </style>
+    <style name="more_common_desc_textView_style" parent="base_textView_style">
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textSize">@dimen/textSize_15</item>
+        <item name="android:textColor">@color/gray01</item>
+    </style>
 </resources>

@@ -27,6 +27,8 @@
 
             </FrameLayout>
 
+            <View
+                style="@style/me_horizontal_view_style"/>
             <TabWidget
                 android:id="@android:id/tabs"
                 android:divider="@null"

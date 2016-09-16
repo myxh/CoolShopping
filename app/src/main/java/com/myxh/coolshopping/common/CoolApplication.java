@@ -7,11 +7,14 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.yolanda.nohttp.NoHttp;
 
 import cn.bmob.v3.Bmob;
+import cn.bmob.v3.update.BmobUpdateAgent;
 
 /**
  * Created by asus on 2016/8/30.
  */
 public class CoolApplication extends Application {
+
+    private boolean flag = true;
 
     @Override
     public void onCreate() {
@@ -25,5 +28,10 @@ public class CoolApplication extends Application {
         SDKInitializer.initialize(this);
         //Bmob初始化
         Bmob.initialize(this, AppConstant.BMOB_AppID);
+
+        if (flag) {
+            flag = false;
+            BmobUpdateAgent.initAppVersion();
+        }
     }
 }

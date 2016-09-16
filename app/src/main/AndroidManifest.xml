@@ -53,6 +53,15 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
+    <!--Bmob自动更新-->
+    <!--权限允许将下载的apk保存到sd卡中-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--权限允许检查网络状态，从而根据不同网络环境决定何种下载策略-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:name=".common.CoolApplication"
         android:allowBackup="true"
@@ -62,7 +71,15 @@
         android:theme="@style/AppTheme"
         tools:replace="name">
 
-        <!-- 百度地图 -->
+        <!--Bmob自动更新 开始-->
+        <meta-data android:value="Channel ID" android:name="BMOB_CHANNEL"/>
+        <activity
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!--Bmob自动更新 结束-->
+
+        <!-- 百度地图 开始-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="yldI70w7zBN0uSprrgfcrumRQktzspPK"/>
@@ -72,8 +89,9 @@
             android:enabled="true"
             android:process=":remote">
         </service>
+        <!--百度地图 结束-->
 
-        <!-- ShareSDK -->
+        <!-- ShareSDK 开始-->
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -93,10 +111,10 @@
             <!-- 新浪微博客户端分享回调必须配置 -->
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <!-- ShareSDK 结束-->
 
         <!-- 项目组件 -->
         <activity android:name=".ui.activity.MainActivity"/>
