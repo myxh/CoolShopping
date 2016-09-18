@@ -85,14 +85,12 @@ public class CollectActivity extends BaseActivity implements AdapterView.OnItemC
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent intent = new Intent(this, DetailActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString(HomeFragment.GOODS_ID, mDataList.get(i).getGoodsId());
         bundle.putString(HomeFragment.GOODS_SEVEN_REFUND, mDataList.get(i).getSevenRefund());
         bundle.putInt(HomeFragment.GOODS_TIME_REFUND, mDataList.get(i).getTimeRefund());
         bundle.putInt(HomeFragment.GOODS_BOUGHT, mDataList.get(i).getBought());
-        intent.putExtras(bundle);
-        startActivity(intent);
+        openActivity(DetailActivity.class,bundle);
     }
 
     @Override

@@ -89,6 +89,7 @@ public class MoreFragment extends BaseFragment implements View.OnClickListener {
         mItemAboutLayout.setOnClickListener(this);
 
         mItemTvCacheSize.setText(DataClearUtil.getTotalCacheSize(getActivity()));
+        mItemTvCurrentVersion.setText(CoolApplication.getAppContext().getAppVersion());
     }
 
     @Override

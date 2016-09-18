@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CoolShopping</string>
+    <string name="app_name">酷乐购</string>
     <string name="tab_title_home">首页</string>
     <string name="tab_title_around">周边</string>
     <string name="tab_title_me">我的</string>
@@ -93,4 +93,27 @@
     <string name="more_item_kefu_hours">(8:00-22:00)</string>
     <string name="clear_cache_success">清除缓存成功</string>
     <string name="open_app_market_failed">打开应用商店失败</string>
+    <string name="current_version">当前版本 V</string>
+    <string name="version_unknown">版本未知</string>
+    <string name="user_center">个人中心</string>
+    <string name="login_input_empty">用户名或密码为空</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_failed">登录失败</string>
+    <string name="user_item_title_username">用户名</string>
+    <string name="user_item_right_modify">修改</string>
+    <string name="user_item_title_nickname">昵称</string>
+    <string name="user_item_right_edit">编辑</string>
+    <string name="user_item_title_bindPhone">绑定手机号</string>
+    <string name="user_item_right_unbind">未绑定</string>
+    <string name="user_item_title_pay_password">支付密码</string>
+    <string name="user_item_right_unset">未设置</string>
+    <string name="user_item_title_login_password">登录密码</string>
+    <string name="user_item_title_avatar">头像</string>
+    <string name="man">男</string>
+    <string name="user_item_title_gender">性别</string>
+    <string name="user_item_title_birthday">生日</string>
+    <string name="user_item_right_select">请选择</string>
+    <string name="user_item_title_address">收货地址</string>
+    <string name="user_item_title_qr">我的二维码</string>
+    <string name="user_exit_login">退出登录</string>
 </resources>

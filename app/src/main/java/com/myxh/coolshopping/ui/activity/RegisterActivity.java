@@ -20,6 +20,7 @@ import com.myxh.coolshopping.listener.BmobMsgSendCallback;
 import com.myxh.coolshopping.listener.BmobSignUpCallback;
 import com.myxh.coolshopping.listener.TextInputWatcher;
 import com.myxh.coolshopping.model.User;
+import com.myxh.coolshopping.ui.base.BaseActivity;
 import com.myxh.coolshopping.util.LoginHelperUtil;
 import com.myxh.coolshopping.util.ToastUtil;
 
@@ -28,7 +29,7 @@ import java.util.TimerTask;
 
 import cn.bmob.v3.exception.BmobException;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
     public static final String INTENT_USER = "user";
     private ImageView mTitleBarIvBack;
@@ -130,7 +131,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        mEtRepassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+       /* mEtRepassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (hasFocus) {
@@ -141,7 +142,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     }
                 }
             }
-        });
+        });*/
     }
 
     private void initView() {

@@ -110,8 +110,7 @@ public class AroundFragment extends BaseFragment implements HttpListener<String>
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.around_toolbar_menu_map:
-                        Intent intent = new Intent(getActivity(), LocationActivity.class);
-                        getActivity().startActivity(intent);
+                        openActivity(LocationActivity.class);
                         break;
                 }
                 return true;

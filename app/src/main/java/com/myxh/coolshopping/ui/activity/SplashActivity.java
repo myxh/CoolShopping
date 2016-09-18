@@ -25,14 +25,12 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 boolean isFirst = SharePreferenceUtil.getBoolean(SplashActivity.this,"isFirst",true);
-                Intent intent = new Intent();
                 if (isFirst) {
                     SharePreferenceUtil.putBoolean(SplashActivity.this,"isFirst",false);
-                    intent.setClass(SplashActivity.this,GuideActivity.class);
+                    openActivity(GuideActivity.class);
                 } else {
-                    intent.setClass(SplashActivity.this,MainActivity.class);
+                    openActivity(MainActivity.class);
                 }
-                startActivity(intent);
                 finish();
             }
         },2000);

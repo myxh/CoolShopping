@@ -2,7 +2,6 @@ package com.myxh.coolshopping.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -19,22 +18,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.common.BmobManager;
 import com.myxh.coolshopping.listener.BmobLoginCallback;
 import com.myxh.coolshopping.listener.BmobMsgSendCallback;
 import com.myxh.coolshopping.listener.TextInputWatcher;
+import com.myxh.coolshopping.ui.base.BaseActivity;
 import com.myxh.coolshopping.util.LoginHelperUtil;
 import com.myxh.coolshopping.util.ToastUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
+    public static final int LOGIN_RESULT_CODE = 1002;
     private ImageView mTitleBarIvBack;
     private TextView mTitleBarTvRegister;
     private TextView mSelectTvQuickLogin;
@@ -256,7 +256,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
             case R.id.login_titleBar_tv_register:
-                startActivity(new Intent(this,RegisterActivity.class));
+                openActivity(RegisterActivity.class);
                 break;
             case R.id.login_select_tv_quickLogin:
                 if (!isQuickLoginSelected) {
@@ -308,13 +308,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onLoginSuccess() {
                             Log.i(TAG, "onLoginSuccess: 登陆成功");
-                            ToastUtil.show(LoginActivity.this,"登录成功");
+                            ToastUtil.show(LoginActivity.this,R.string.login_success);
                         }
 
                         @Override
                         public void onLoginFailure() {
                             Log.i(TAG, "onLoginFailure: 登陆失败");
-                            ToastUtil.show(LoginActivity.this,"登录失败");
+                            ToastUtil.show(LoginActivity.this,R.string.login_failed);
                         }
                     }).signOrLoginByMsgCode(mPhoneNumber,code);
                 } else {
@@ -330,7 +330,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 mAccountLoginIvClearPassword.setVisibility(View.GONE);
                 break;
             case R.id.login_account_login_btn:
-
+                String username = mAccountLoginEtUsername.getText().toString();
+                String password = mAccountLoginEtPassword.getText().toString();
+                if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
+                    BmobManager.getInstance(new BmobLoginCallback() {
+                        @Override
+                        public void onLoginSuccess() {
+                            ToastUtil.show(LoginActivity.this,R.string.login_success);
+                            Intent data = new Intent();
+                            setResult(LOGIN_RESULT_CODE,data);
+                            finish();
+                        }
+                        @Override
+                        public void onLoginFailure() {
+                            ToastUtil.show(LoginActivity.this,R.string.login_failed);
+                        }
+                    }).login(username,password);
+                } else {
+                    ToastUtil.show(this,R.string.login_input_empty);
+                }
                 break;
             case R.id.login_account_login_tv_forget_password:
 

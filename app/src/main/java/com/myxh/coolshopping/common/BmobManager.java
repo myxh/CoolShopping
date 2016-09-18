@@ -125,6 +125,27 @@ public final class BmobManager {
         });
     }
 
+    /**
+     * 使用用户名密码登录
+     * @param username
+     * @param password
+     */
+    public void login(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.login(new SaveListener<User>() {
+            @Override
+            public void done(User user, BmobException e) {
+                if (e==null) {
+                    mListener.onLoginSuccess();
+                } else {
+                    mListener.onLoginFailure();
+                }
+            }
+        });
+    }
+
 
     /**
      * 插入数据

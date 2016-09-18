@@ -18,6 +18,7 @@ import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.model.User;
 import com.myxh.coolshopping.ui.activity.CollectActivity;
 import com.myxh.coolshopping.ui.activity.LoginActivity;
+import com.myxh.coolshopping.ui.activity.UserProfileActivity;
 import com.myxh.coolshopping.ui.base.BaseFragment;
 import com.myxh.coolshopping.util.ToastUtil;
 
@@ -25,6 +26,7 @@ import com.myxh.coolshopping.util.ToastUtil;
  * Created by asus on 2016/8/27.
  */
 public class MeFragment extends BaseFragment implements View.OnClickListener {
+    private static final int LOGIN_REQUEST_CODE = 100;
     private SimpleDraweeView mLoginIvHead;
     private TextView mLoginTvUsername;
     private ImageView mLoginIvLevel;
@@ -53,6 +55,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private TextView mItemRecommendTvNew;
     private RelativeLayout mItemRecommendLayout;
     private RelativeLayout mItemQrLayout;
+    private LinearLayout mLoginProfileLayout;
 
     @Nullable
     @Override
@@ -72,7 +75,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             mItemCouponsLayout.setVisibility(View.VISIBLE);
 
             mLoginTvUsername.setText(user.getUsername());
-            mLoginTvBalance.setText(user.getBalance()+"");
+            mLoginTvBalance.setText(user.getBalance() + "");
             if (user.getHeadIcon() == null) {
                 mLoginIvHead.setImageResource(R.mipmap.user_head);
             } else {
@@ -115,6 +118,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         mItemRecommendTvNew = (TextView) view.findViewById(R.id.me_item_recommend_tv_new);
         mItemRecommendLayout = (RelativeLayout) view.findViewById(R.id.me_item_recommend_layout);
         mItemQrLayout = (RelativeLayout) view.findViewById(R.id.me_item_qr_layout);
+        mLoginProfileLayout = (LinearLayout) view.findViewById(R.id.me_login_profile_layout);
 
         mLoginIvHead.setOnClickListener(this);
         mLoginIvArrowRight.setOnClickListener(this);
@@ -130,6 +134,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         mItemCouponsLayout.setOnClickListener(this);
         mItemRecommendLayout.setOnClickListener(this);
         mItemQrLayout.setOnClickListener(this);
+        mLoginProfileLayout.setOnClickListener(this);
     }
 
     @Override
@@ -138,52 +143,57 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.me_login_iv_head:
 
                 break;
+            case R.id.me_login_profile_layout:
+                openActivity(UserProfileActivity.class);
+                break;
             case R.id.me_login_iv_arrow_right:
 
                 break;
             case R.id.me_nologin_btn_login:
-                startActivity(new Intent(getActivity(), LoginActivity.class));
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivityForResult(intent, LOGIN_REQUEST_CODE);
+//                openActivity(LoginActivity.class);
                 break;
             case R.id.me_user_tv_cart:
                 if (User.getCurrentUser() != null) {
 
                 } else {
-                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_user_tv_favorite:
                 if (User.getCurrentUser() != null) {
-                    startActivity(new Intent(getActivity(), CollectActivity.class));
+                    openActivity(CollectActivity.class);
                 } else {
-                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_user_tv_history:
                 if (User.getCurrentUser() != null) {
 
                 } else {
-                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_unpaid_layout:
                 if (User.getCurrentUser() != null) {
 
                 } else {
-                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_paid_order_layout:
                 if (User.getCurrentUser() != null) {
 
                 } else {
-                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_lottery_layout:
                 if (User.getCurrentUser() != null) {
 
                 } else {
-                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_treasure_layout:
@@ -202,5 +212,13 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == LOGIN_REQUEST_CODE && resultCode == LoginActivity.LOGIN_RESULT_CODE) {
+            initUserLayout();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

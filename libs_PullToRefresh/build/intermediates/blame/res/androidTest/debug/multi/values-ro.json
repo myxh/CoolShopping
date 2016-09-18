@@ -1,5 +1,67 @@
 [
     {
+        "outputFile": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ro\\values-ro.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 83,
+                    "endOffset": 134
+                },
+                "from": {
+                    "file": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ro\\values-ro.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 83,
+                        "endOffset": 134
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 139,
+                    "endColumn": 71,
+                    "endOffset": 206
+                },
+                "from": {
+                    "file": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ro\\values-ro.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 139,
+                        "endColumn": 71,
+                        "endOffset": 206
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 211,
+                    "endColumn": 91,
+                    "endOffset": 298
+                },
+                "from": {
+                    "file": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-ro\\values-ro.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 211,
+                        "endColumn": 91,
+                        "endOffset": 298
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "E:\\Study\\Android\\myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ro\\values-ro.xml",
         "map": [
             {

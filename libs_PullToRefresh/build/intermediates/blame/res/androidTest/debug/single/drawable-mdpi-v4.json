@@ -12,6 +12,10 @@
         "source": "E:\\Study\\Android\\project_as\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
     },
     {
+        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
+        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\indicator_arrow.png"
+    },
+    {
         "merged": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
         "source": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\indicator_arrow.png"
     },
@@ -24,8 +28,16 @@
         "source": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
     },
     {
+        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
+        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
+    },
+    {
         "merged": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
         "source": "E:\\Study\\Android\\myxh_project\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
+    },
+    {
+        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",
+        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
     },
     {
         "merged": "E:\\Study\\Android\\myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",

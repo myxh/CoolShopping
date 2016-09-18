@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_titleBar_height"
+        android:background="@color/title_bar_color">
+        <ImageView
+            android:id="@+id/common_titleBar_iv_back"
+            style="@style/common_left_back_imageView_style"/>
+        <TextView
+            android:id="@+id/common_titleBar_tv_title"
+            style="@style/base_textView_style"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            tools:text="@string/my_collection"
+            android:textSize="@dimen/login_titleBar_login_size"
+            android:textColor="@color/textColor_32"/>
+        <TextView
+            android:id="@+id/common_titleBar_tv_right"
+            style="@style/common_right_title_textView_style"
+            android:gravity="center"
+            tools:text="@string/collect_titleBar_manager"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/login_titleBar_register_size"/>
+    </RelativeLayout>
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+    <FrameLayout
+        android:id="@+id/common_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/common_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/common_error_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:drawableTop="@mipmap/net_failed"
+            android:drawablePadding="10dp"
+            tools:text="@string/collect_have_no_collection"
+            android:textColor="@color/gray01"
+            android:textSize="@dimen/textSize_16"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+</LinearLayout>

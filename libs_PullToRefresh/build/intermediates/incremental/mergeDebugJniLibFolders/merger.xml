@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\Study\Android\project_as\CoolShopping\libs_PullToRefresh\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\Study\Android\project_as\CoolShopping\libs_PullToRefresh\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\Study\Android\project_myxh\CoolShopping\libs_PullToRefresh\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\Study\Android\project_myxh\CoolShopping\libs_PullToRefresh\src\debug\jniLibs"/></dataSet></merger>
