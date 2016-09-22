@@ -116,4 +116,8 @@
     <string name="user_item_title_address">收货地址</string>
     <string name="user_item_title_qr">我的二维码</string>
     <string name="user_exit_login">退出登录</string>
+    <string name="user_item_title_member_level">会员等级</string>
+    <string name="auth_cancel">取消授权</string>
+    <string name="auth_error">授权失败</string>
+    <string name="auth_success">授权成功</string>
 </resources>

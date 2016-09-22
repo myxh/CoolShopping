@@ -13,6 +13,8 @@ import com.myxh.coolshopping.ui.fragment.UserProfileFragment;
 
 public class UserProfileActivity extends BaseActivity {
 
+    public static final int PROFILE_RESULT_CODE = 30001;
+
     private ImageView mTitleBarIvBack;
     private TextView mTitleBarTvTitle;
     private TextView mTitleBarTvRight;
@@ -23,7 +25,7 @@ public class UserProfileActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_common_detail_info);
+        setContentView(R.layout.layout_common_info_activity);
         initView();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.common_content_layout,new UserProfileFragment()).commit();
@@ -38,5 +40,12 @@ public class UserProfileActivity extends BaseActivity {
         mErrorLayout = (LinearLayout) findViewById(R.id.common_error_layout);
 
         mTitleBarTvRight.setVisibility(View.GONE);
+        mTitleBarTvTitle.setText(R.string.user_center);
+        mTitleBarIvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }

@@ -27,6 +27,7 @@ import com.myxh.coolshopping.util.ToastUtil;
  */
 public class MeFragment extends BaseFragment implements View.OnClickListener {
     private static final int LOGIN_REQUEST_CODE = 100;
+    private static final int PROFILE_REQUEST_CODE = 101;
     private SimpleDraweeView mLoginIvHead;
     private TextView mLoginTvUsername;
     private ImageView mLoginIvLevel;
@@ -144,7 +145,9 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.me_login_profile_layout:
-                openActivity(UserProfileActivity.class);
+                Intent profileIntent = new Intent(getActivity(), UserProfileActivity.class);
+                startActivityForResult(profileIntent, PROFILE_REQUEST_CODE);
+//                openActivity(UserProfileActivity.class);
                 break;
             case R.id.me_login_iv_arrow_right:
 
@@ -217,6 +220,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == LOGIN_REQUEST_CODE && resultCode == LoginActivity.LOGIN_RESULT_CODE) {
+            initUserLayout();
+        } else if (requestCode == PROFILE_REQUEST_CODE && resultCode == UserProfileActivity.PROFILE_RESULT_CODE) {
             initUserLayout();
         }
         super.onActivityResult(requestCode, resultCode, data);

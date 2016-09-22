@@ -32,7 +32,7 @@
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_avatar"/>
                     <com.facebook.drawee.view.SimpleDraweeView
-                        android:id="@+id/me_login_iv_head"
+                        android:id="@+id/user_item_avatar"
                         android:layout_width="@dimen/me_login_head_width"
                         android:layout_height="@dimen/me_login_head_height"
                         android:layout_marginEnd="@dimen/me_login_head_marginEnd"
@@ -129,7 +129,6 @@
                     android:id="@+id/user_item_payPassword_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_payPassword_tv_title"
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_pay_password"/>
                     <TextView
@@ -148,7 +147,6 @@
                     android:id="@+id/user_item_loginPassword_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_loginPassword_tv_title"
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_login_password"/>
                     <TextView
@@ -173,9 +171,8 @@
                     android:id="@+id/user_item_level_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_level_tv_title"
                         style="@style/more_common_item_textView_style"
-                        android:text="@string/user_item_title_login_password"/>
+                        android:text="@string/user_item_title_member_level"/>
                     <ImageView
                         android:id="@+id/user_item_level_iv_level"
                         android:layout_width="@dimen/me_login_level_width"
@@ -200,7 +197,6 @@
                     android:id="@+id/user_item_gender_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_gender_tv_title"
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_gender"/>
                     <TextView
@@ -219,7 +215,6 @@
                     android:id="@+id/user_item_birthday_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_birthday_tv_title"
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_birthday"/>
                     <TextView
@@ -238,7 +233,6 @@
                     android:id="@+id/user_item_address_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_address_tv_title"
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_address"/>
                     <ImageView
@@ -250,7 +244,6 @@
                     android:id="@+id/user_item_qr_layout"
                     style="@style/me_common_item_relativeLayout_style">
                     <TextView
-                        android:id="@+id/user_item_qr_tv_title"
                         style="@style/more_common_item_textView_style"
                         android:text="@string/user_item_title_qr"/>
                     <ImageView
