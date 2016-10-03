@@ -168,6 +168,8 @@
         </activity>
         <activity android:name=".ui.activity.CityActivity">
         </activity>
+        <activity android:name=".ui.activity.MessageActivity">
+        </activity>
 
         <service
             android:name=".common.LocationService"

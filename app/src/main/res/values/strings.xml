@@ -136,4 +136,6 @@
     <string name="recent_city">最近浏览城市</string>
     <string name="hot_city">热门城市</string>
     <string name="location_city">定位城市</string>
+    <string name="no_message">您还没有收到消息哦</string>
+    <string name="message">消息</string>
 </resources>

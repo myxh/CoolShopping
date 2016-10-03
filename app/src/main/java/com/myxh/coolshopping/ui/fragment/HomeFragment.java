@@ -29,10 +29,12 @@ import com.myxh.coolshopping.entity.FilmInfo;
 import com.myxh.coolshopping.entity.GoodsInfo;
 import com.myxh.coolshopping.entity.HomeGridInfo;
 import com.myxh.coolshopping.listener.ViewPagerListener;
+import com.myxh.coolshopping.model.User;
 import com.myxh.coolshopping.network.CallServer;
 import com.myxh.coolshopping.network.HttpListener;
 import com.myxh.coolshopping.ui.activity.CityActivity;
 import com.myxh.coolshopping.ui.activity.DetailActivity;
+import com.myxh.coolshopping.ui.activity.MessageActivity;
 import com.myxh.coolshopping.ui.adapter.BannerPagerAdapter;
 import com.myxh.coolshopping.ui.adapter.GoodsListAdapter;
 import com.myxh.coolshopping.ui.adapter.GridAdapter;
@@ -206,14 +208,6 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
     }
 
     private void initTitlebar(View view) {
-        ImageView scanQR = (ImageView) view.findViewById(R.id.titleBar_scan_img);
-        scanQR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CaptureActivity.class);
-                getActivity().startActivityForResult(intent,SCAN_QR_REQUEST);
-            }
-        });
         LinearLayout cityLayout = (LinearLayout) view.findViewById(R.id.titleBar_location_lay);
         mCityName = (TextView) view.findViewById(R.id.titleBar_city_name);
         cityLayout.setOnClickListener(new View.OnClickListener() {
@@ -222,6 +216,28 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
                 Intent intent = new Intent(getActivity(),CityActivity.class);
                 intent.putExtra(AppConstant.KEY_CITY,mCityName.getText().toString());
                 startActivityForResult(intent,CITY_REQUEST_CODE);
+            }
+        });
+
+        ImageView scanQR = (ImageView) view.findViewById(R.id.titleBar_scan_img);
+        scanQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CaptureActivity.class);
+                getActivity().startActivityForResult(intent,SCAN_QR_REQUEST);
+            }
+        });
+
+        ImageView messageBox = (ImageView) view.findViewById(R.id.titleBar_msg_iv);
+        messageBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User user = User.getCurrentUser(User.class);
+                if (user != null) {
+                    openActivity(MessageActivity.class);
+                } else {
+                    ToastUtil.show(getActivity(),R.string.me_nologin_not_login);
+                }
             }
         });
     }
