@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_recent_city_tv"
+        style="@style/city_category_textView_style"
+        android:text="@string/hot_city"/>
+
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+    <com.myxh.coolshopping.ui.widget.NoScrollGridView
+        android:id="@+id/item_recent_city_gv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent"
+        android:horizontalSpacing="1px"
+        android:verticalSpacing="1px"
+        android:numColumns="4"/>
+
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+
+</LinearLayout>

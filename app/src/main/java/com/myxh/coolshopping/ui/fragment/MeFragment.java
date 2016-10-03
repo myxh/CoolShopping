@@ -16,8 +16,15 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.model.User;
+import com.myxh.coolshopping.ui.activity.CartActivity;
 import com.myxh.coolshopping.ui.activity.CollectActivity;
+import com.myxh.coolshopping.ui.activity.CouponsActivity;
+import com.myxh.coolshopping.ui.activity.HistoryActivity;
 import com.myxh.coolshopping.ui.activity.LoginActivity;
+import com.myxh.coolshopping.ui.activity.LotteryActivity;
+import com.myxh.coolshopping.ui.activity.PaidActivity;
+import com.myxh.coolshopping.ui.activity.TreasureActivity;
+import com.myxh.coolshopping.ui.activity.UnpaidActivity;
 import com.myxh.coolshopping.ui.activity.UserProfileActivity;
 import com.myxh.coolshopping.ui.base.BaseFragment;
 import com.myxh.coolshopping.util.ToastUtil;
@@ -159,7 +166,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.me_user_tv_cart:
                 if (User.getCurrentUser() != null) {
-
+                    openActivity(CartActivity.class);
                 } else {
                     ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
@@ -173,40 +180,44 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.me_user_tv_history:
                 if (User.getCurrentUser() != null) {
-
+                    openActivity(HistoryActivity.class);
                 } else {
                     ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_unpaid_layout:
                 if (User.getCurrentUser() != null) {
-
+                    openActivity(UnpaidActivity.class);
                 } else {
                     ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_paid_order_layout:
                 if (User.getCurrentUser() != null) {
-
+                    openActivity(PaidActivity.class);
                 } else {
                     ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_lottery_layout:
                 if (User.getCurrentUser() != null) {
-
+                    openActivity(LotteryActivity.class);
                 } else {
                     ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
                 }
                 break;
             case R.id.me_item_treasure_layout:
-
+                if (User.getCurrentUser() != null) {
+                    openActivity(TreasureActivity.class);
+                } else {
+                    ToastUtil.show(getActivity(), R.string.me_nologin_not_login);
+                }
                 break;
             case R.id.me_item_bankcard_layout:
 
                 break;
             case R.id.me_item_coupons_layout:
-
+                openActivity(CouponsActivity.class);
                 break;
             case R.id.me_item_recommend_layout:
 

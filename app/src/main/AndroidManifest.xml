@@ -38,14 +38,14 @@
     <!-- 蓝牙分享所需的权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <!--Share SDK 第三方登录-->
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Share SDK 第三方登录 -->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
 
@@ -152,6 +152,28 @@
         </activity>
         <activity android:name=".ui.activity.UserProfileActivity">
         </activity>
+        <activity android:name=".ui.activity.CartActivity">
+        </activity>
+        <activity android:name=".ui.activity.HistoryActivity">
+        </activity>
+        <activity android:name=".ui.activity.UnpaidActivity">
+        </activity>
+        <activity android:name=".ui.activity.PaidActivity">
+        </activity>
+        <activity android:name=".ui.activity.LotteryActivity">
+        </activity>
+        <activity android:name=".ui.activity.TreasureActivity">
+        </activity>
+        <activity android:name=".ui.activity.CouponsActivity">
+        </activity>
+        <activity android:name=".ui.activity.CityActivity">
+        </activity>
+
+        <service
+            android:name=".common.LocationService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

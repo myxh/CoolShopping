@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import com.myxh.coolshopping.R;
+import com.myxh.coolshopping.common.LocationService;
 import com.myxh.coolshopping.ui.base.BaseActivity;
 import com.myxh.coolshopping.util.SharePreferenceUtil;
 
@@ -20,6 +21,9 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        //开启定位服务
+        startService(new Intent(this, LocationService.class));
 
         mHandler.postDelayed(new Runnable() {
             @Override

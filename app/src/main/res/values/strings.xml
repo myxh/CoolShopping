@@ -120,4 +120,20 @@
     <string name="auth_cancel">取消授权</string>
     <string name="auth_error">授权失败</string>
     <string name="auth_success">授权成功</string>
+    <string name="cart">购物车</string>
+    <string name="cart_empty">您的购物车为空</string>
+    <string name="history_empty">您还没有浏览记录</string>
+    <string name="paid_order_empty">您没有已付款订单</string>
+    <string name="unpaid_order_empty">您没有未付款订单</string>
+    <string name="lottery_order_empty">您还没有抽奖单</string>
+    <string name="treasure_order_empty">夺宝单为空</string>
+    <string name="coupons_empty">您还没有抵用券</string>
+    <string name="current_city">当前城市</string>
+    <string name="input_city_to_search">请输入要查找的城市</string>
+    <string name="not_find_city">抱歉，暂时没有找到相关城市</string>
+    <string name="location_failure">定位失败，请重试</string>
+    <string name="location_ing">正在定位...</string>
+    <string name="recent_city">最近浏览城市</string>
+    <string name="hot_city">热门城市</string>
+    <string name="location_city">定位城市</string>
 </resources>

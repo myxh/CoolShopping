@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/item_all_city_alpha_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/item_all_city_tv_alpha"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            tools:text="A"
+            android:textSize="24sp"
+            android:background="@color/city_item_bg"/>
+
+        <View
+            style="@style/me_horizontal_view_style"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_all_city_tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector"
+        tools:text="北京"/>
+
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+</LinearLayout>

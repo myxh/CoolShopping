@@ -60,4 +60,5 @@
     <!-- 登录界面 -->
     <color name="orange">#ffff6900</color>
     <color name="content_color">#ff687186</color>
+    <color name="city_item_bg">#f0f0f0</color>
 </resources>

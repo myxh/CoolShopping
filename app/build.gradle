@@ -53,4 +53,5 @@ dependencies {
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
     compile project(':libs_PullToRefresh')
+    compile files('libs/pinyin4j-2.5.0.jar')
 }

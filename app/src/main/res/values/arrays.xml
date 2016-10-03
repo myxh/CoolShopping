@@ -59,4 +59,32 @@
         <item>可在线支付</item>
     </array>
 
+    <array name="city_categories">
+        <item>定位城市</item>
+        <item>最近浏览城市</item>
+        <item>热门城市</item>
+    </array>
+
+
+    <array name="city_hot">
+        <item>北京</item>
+        <item>上海</item>
+        <item>广州</item>
+        <item>深圳</item>
+        <item>天津</item>
+        <item>重庆</item>
+        <item>南京</item>
+        <item>武汉</item>
+        <item>西安</item>
+        <item>杭州</item>
+        <item>成都</item>
+        <item>济南</item>
+        <item>苏州</item>
+        <item>东莞</item>
+        <item>郑州</item>
+        <item>宁波</item>
+    </array>
+
+
+
 </resources>

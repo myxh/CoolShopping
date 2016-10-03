@@ -1,13 +1,17 @@
 package com.myxh.coolshopping.common;
 
-import android.app.Application;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
+import com.baidu.location.BDLocation;
 import com.baidu.mapapi.SDKInitializer;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.myxh.coolshopping.R;
+import com.uuzuche.lib_zxing.ZApplication;
 import com.yolanda.nohttp.NoHttp;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.update.BmobUpdateAgent;
@@ -15,10 +19,11 @@ import cn.bmob.v3.update.BmobUpdateAgent;
 /**
  * Created by asus on 2016/8/30.
  */
-public class CoolApplication extends Application {
+public class CoolApplication extends ZApplication {
 
     private static CoolApplication appContext;
     private boolean flag = true;
+    private List<BDLocation> mLocations = new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -42,6 +47,14 @@ public class CoolApplication extends Application {
 
     public static CoolApplication getAppContext() {
         return appContext;
+    }
+
+    public List<BDLocation> getLocations() {
+        return mLocations;
+    }
+
+    public void setLocations(List<BDLocation> locations) {
+        mLocations = locations;
     }
 
     public String getAppVersion() {

@@ -163,4 +163,8 @@
     <dimen name="login_account_login_forget_password_marginRight">10dp</dimen>
     <dimen name="register_content_layout_marginTop">20dp</dimen>
     <dimen name="register_bottom_tips_marginTop">20dp</dimen>
+    <dimen name="et_shape_padding">5dp</dimen>
+    <dimen name="city_item_height">40dp</dimen>
+    <dimen name="item_hot_city_width">70dp</dimen>
+    <dimen name="item_hot_city_height">46dp</dimen>
 </resources>

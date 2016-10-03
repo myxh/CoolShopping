@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+    <TextView
+        android:id="@+id/item_recent_city_tv_recent"
+        style="@style/city_category_textView_style"
+        android:text="@string/location_city"/>
+
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+    <RelativeLayout
+        android:id="@+id/item_location_city_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/item_location_city_tv_ing"
+            style="@style/city_location_textView_style"
+            android:text="@string/location_ing"/>
+        <TextView
+            android:id="@+id/item_location_city_tv_failure"
+            style="@style/city_location_textView_style"
+            android:text="@string/location_failure"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/item_location_city_tv_city"
+            style="@style/city_location_textView_style"
+            android:textColor="@color/app_yellow"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <View
+        style="@style/me_horizontal_view_style"/>
+
+</LinearLayout>

@@ -43,4 +43,9 @@ public class AppConstant {
      * 用户ID Key(Bmob)
      */
     public static final String KEY_USER_ID = "userId";
+
+    /**
+     * 城市key
+     */
+    public static final String KEY_CITY = "city";
 }

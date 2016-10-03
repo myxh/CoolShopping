@@ -24,12 +24,14 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.common.AppConstant;
+import com.myxh.coolshopping.common.CoolApplication;
 import com.myxh.coolshopping.entity.FilmInfo;
 import com.myxh.coolshopping.entity.GoodsInfo;
 import com.myxh.coolshopping.entity.HomeGridInfo;
 import com.myxh.coolshopping.listener.ViewPagerListener;
 import com.myxh.coolshopping.network.CallServer;
 import com.myxh.coolshopping.network.HttpListener;
+import com.myxh.coolshopping.ui.activity.CityActivity;
 import com.myxh.coolshopping.ui.activity.DetailActivity;
 import com.myxh.coolshopping.ui.adapter.BannerPagerAdapter;
 import com.myxh.coolshopping.ui.adapter.GoodsListAdapter;
@@ -60,6 +62,7 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
     public static final String GOODS_SEVEN_REFUND = "sevenRefund";
     public static final String GOODS_TIME_REFUND = "timeRefund";
     public static final String GOODS_BOUGHT = "bought";
+    private static final int CITY_REQUEST_CODE = 4000;
 
     private int[] imgRes = new int[]{R.drawable.banner01,R.drawable.banner02,R.drawable.banner03};
     private Handler mHandler = new Handler();
@@ -81,6 +84,7 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
 
     //是否正在刷新
     private boolean isRefreshing = false;
+    private TextView mCityName;
 
     @Nullable
     @Override
@@ -210,6 +214,16 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
                 getActivity().startActivityForResult(intent,SCAN_QR_REQUEST);
             }
         });
+        LinearLayout cityLayout = (LinearLayout) view.findViewById(R.id.titleBar_location_lay);
+        mCityName = (TextView) view.findViewById(R.id.titleBar_city_name);
+        cityLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),CityActivity.class);
+                intent.putExtra(AppConstant.KEY_CITY,mCityName.getText().toString());
+                startActivityForResult(intent,CITY_REQUEST_CODE);
+            }
+        });
     }
 
     @Override
@@ -225,6 +239,13 @@ public class HomeFragment extends BaseFragment implements HttpListener<String> {
                     ToastUtil.show(getActivity(),"解析结果:"+result);
                 } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
                     ToastUtil.show(getActivity(),"解析二维码失败");
+                }
+            }
+        } else if (requestCode == CITY_REQUEST_CODE && resultCode == CityActivity.CITY_RESULT_CODE) {
+            if (data != null) {
+                String cityname = data.getStringExtra(AppConstant.KEY_CITY);
+                if (cityname != null) {
+                    mCityName.setText(cityname);
                 }
             }
         }

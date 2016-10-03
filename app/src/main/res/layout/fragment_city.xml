@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/city_item_bg" >
+
+    <EditText
+        android:id="@+id/city_et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/wb_search_icon"
+        android:drawablePadding="5dp"
+        android:hint="@string/input_city_to_search"
+        android:background="@drawable/edittext_selector"/>
+
+    <RelativeLayout
+        android:id="@+id/city_fra_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/city_et_search">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/city_rv_city_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/city_sidebar"/>
+
+        <TextView
+            android:id="@+id/city_tv_show"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30dp"
+            android:visibility="gone" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/city_rv_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/city_sidebar"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/city_tv_no_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/not_find_city"
+            android:visibility="gone"/>
+
+        <com.myxh.coolshopping.ui.widget.SidebarView
+            android:id="@+id/city_sidebar"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="7dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
