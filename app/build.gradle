@@ -54,4 +54,8 @@ dependencies {
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
     compile project(':libs_PullToRefresh')
     compile files('libs/pinyin4j-2.5.0.jar')
+    //热修复
+    compile 'com.alipay.euler:andfix:0.5.0@aar'
+    compile files('libs/BmobPay_v3.0.3_160621.jar')
+    compile files('libs/weiboSDKCore_3.1.2.jar')
 }

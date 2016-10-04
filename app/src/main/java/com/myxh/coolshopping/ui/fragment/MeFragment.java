@@ -28,6 +28,7 @@ import com.myxh.coolshopping.ui.activity.UnpaidActivity;
 import com.myxh.coolshopping.ui.activity.UserProfileActivity;
 import com.myxh.coolshopping.ui.base.BaseFragment;
 import com.myxh.coolshopping.util.ToastUtil;
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
 
 /**
  * Created by asus on 2016/8/27.
@@ -35,6 +36,7 @@ import com.myxh.coolshopping.util.ToastUtil;
 public class MeFragment extends BaseFragment implements View.OnClickListener {
     private static final int LOGIN_REQUEST_CODE = 100;
     private static final int PROFILE_REQUEST_CODE = 101;
+    private static final int SCAN_QR_REQUEST = 3001;
     private SimpleDraweeView mLoginIvHead;
     private TextView mLoginTvUsername;
     private ImageView mLoginIvLevel;
@@ -223,7 +225,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
             case R.id.me_item_qr_layout:
-
+                Intent qrIntent = new Intent(getActivity(), CaptureActivity.class);
+                getActivity().startActivityForResult(qrIntent,SCAN_QR_REQUEST);
                 break;
         }
     }
@@ -234,6 +237,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             initUserLayout();
         } else if (requestCode == PROFILE_REQUEST_CODE && resultCode == UserProfileActivity.PROFILE_RESULT_CODE) {
             initUserLayout();
+        } else if (requestCode == SCAN_QR_REQUEST) {
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

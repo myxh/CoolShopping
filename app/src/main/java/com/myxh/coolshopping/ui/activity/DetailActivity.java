@@ -21,6 +21,7 @@ import com.google.gson.Gson;
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.common.AppConstant;
 import com.myxh.coolshopping.common.BmobManager;
+import com.myxh.coolshopping.common.CoolApplication;
 import com.myxh.coolshopping.entity.GoodsDetailInfo;
 import com.myxh.coolshopping.listener.BmobQueryCallback;
 import com.myxh.coolshopping.model.BaseModel;
@@ -200,7 +201,7 @@ public class DetailActivity extends BaseActivity implements View.OnClickListener
                 
                 break;
             case R.id.detail_layout_buy_btn:
-
+                BmobManager.pay(CoolApplication.getAppContext(),false,new Bundle());
                 break;
         }
     }

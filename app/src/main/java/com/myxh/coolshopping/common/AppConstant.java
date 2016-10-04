@@ -48,4 +48,6 @@ public class AppConstant {
      * 城市key
      */
     public static final String KEY_CITY = "city";
+
+    public static final String PAY_PLUGIN_NAME = "bp.db";
 }

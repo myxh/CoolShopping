@@ -138,4 +138,11 @@
     <string name="location_city">定位城市</string>
     <string name="no_message">您还没有收到消息哦</string>
     <string name="message">消息</string>
+    <string name="plugin_not_installed">监测到本机尚未安装支付插件,无法进行支付,请先安装插件(无流量消耗)</string>
+    <string name="plugin_not_latest">监测到本机的支付插件不是最新版,最好进行更新,请先更新插件(无流量消耗)</string>
+    <string name="pay_result_unknow">支付结果未知,请稍后手动查询</string>
+    <string name="pay_success">支付成功</string>
+    <string name="get_order_success">获取订单成功!请等待跳转到支付页面~</string>
+    <string name="check_no_plugin">监测到你尚未安装支付插件,无法进行支付,请先安装插件(已打包在本地,无流量消耗),安装结束后重新支付</string>
+    <string name="pay_interrupt">支付中断</string>
 </resources>

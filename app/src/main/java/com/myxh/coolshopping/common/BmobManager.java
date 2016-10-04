@@ -1,14 +1,21 @@
 package com.myxh.coolshopping.common;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 
+import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.listener.IBmobListener;
 import com.myxh.coolshopping.model.BaseModel;
 import com.myxh.coolshopping.model.FavorModel;
 import com.myxh.coolshopping.model.User;
+import com.myxh.coolshopping.util.DialogUtil;
+import com.myxh.coolshopping.util.ToastUtil;
 
 import java.util.List;
 
+import c.b.BP;
+import c.b.PListener;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobSMS;
 import cn.bmob.v3.BmobUser;
@@ -19,6 +26,8 @@ import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
+import static android.R.attr.name;
+
 /**
  * Created by asus on 2016/9/9.
  */
@@ -27,6 +36,10 @@ public final class BmobManager {
     private static BmobManager bmobManager;
 
     private static IBmobListener mListener;
+
+    public static final String PRODUCT_NAME = "product_name";
+    public static final String PRODUCT_DESC = "product_desc";
+    public static final String PRODUCT_PRICE = "product_price";
 
     public static BmobManager getInstance(IBmobListener listener) {
         mListener = listener;
@@ -252,6 +265,62 @@ public final class BmobManager {
                         mListener.onQueryFailure(e);
                     }
                 }
+            }
+        });
+    }
+
+    /**
+     * 调用第三方支付
+     * @param appContext
+     * @param alipayOrWechatPay true为支付宝支付，false为微信支付
+     * @param productInfo 商品信息
+     */
+    public static void pay(final Context appContext, final boolean alipayOrWechatPay, Bundle productInfo) {
+        DialogUtil.showDialog(appContext, "正在获取订单...");
+
+        String productName = productInfo.getString(PRODUCT_NAME, "商品名");
+        String productDesc = productInfo.getString(PRODUCT_DESC, "商品详情");
+        double productPrice = productInfo.getDouble(PRODUCT_PRICE, 0.01);
+
+        BP.pay(productName, productDesc, productPrice, alipayOrWechatPay, new PListener() {
+
+            // 因为网络等原因,支付结果未知(小概率事件),出于保险起见稍后手动查询
+            @Override
+            public void unknow() {
+                ToastUtil.show(appContext,appContext.getString(R.string.pay_result_unknow));
+                DialogUtil.hideDialog();
+            }
+
+            // 支付成功,如果金额较大请手动查询确认
+            @Override
+            public void succeed() {
+                ToastUtil.show(appContext,appContext.getString(R.string.pay_success));
+                DialogUtil.hideDialog();
+            }
+
+            // 无论成功与否,返回订单号
+            @Override
+            public void orderId(String orderId) {
+                // 此处应该保存订单号,比如保存进数据库等,以便以后查询
+//                order.setText(orderId);
+                DialogUtil.showDialog(appContext,appContext.getString(R.string.get_order_success));
+            }
+
+            // 支付失败,原因可能是用户中断支付操作,也可能是网络原因
+            @Override
+            public void fail(int code, String reason) {
+
+                // 当code为-2,意味着用户中断了操作
+                // code为-3意味着没有安装BmobPlugin插件
+                if (code == -3) {
+                    ToastUtil.show(appContext,appContext.getString(R.string.check_no_plugin));
+                    CoolApplication.getAppContext().installBmobPayPlugin(AppConstant.PAY_PLUGIN_NAME);
+                } else {
+                    ToastUtil.show(appContext,appContext.getString(R.string.pay_interrupt)
+                            +"\ncode:"+code
+                            +"\nreason:"+reason);
+                }
+                DialogUtil.hideDialog();
             }
         });
     }
