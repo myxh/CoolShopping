@@ -33,7 +33,7 @@
 
 ![商品图库](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/23.png)
  
- ### [更多](https://github.com/myxh/CoolShopping/tree/master/ScreenCapture)
+### [更多](https://github.com/myxh/CoolShopping/tree/master/ScreenCapture)
  
 # License
 >Copyright 2016 myxh
