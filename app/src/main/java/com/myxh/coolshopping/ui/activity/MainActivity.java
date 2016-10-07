@@ -2,9 +2,7 @@ package com.myxh.coolshopping.ui.activity;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,7 +10,6 @@ import android.widget.TextView;
 import com.myxh.coolshopping.R;
 import com.myxh.coolshopping.model.User;
 import com.myxh.coolshopping.ui.base.BaseActivity;
-import com.myxh.coolshopping.ui.base.ToolbarActivity;
 import com.myxh.coolshopping.ui.fragment.AroundFragment;
 import com.myxh.coolshopping.ui.fragment.HomeFragment;
 import com.myxh.coolshopping.ui.fragment.MeFragment;

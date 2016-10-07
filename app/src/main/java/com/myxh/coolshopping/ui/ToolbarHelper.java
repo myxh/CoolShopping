@@ -1,6 +1,7 @@
 package com.myxh.coolshopping.ui;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,7 @@ public class ToolbarHelper {
     private View mUserView;
     private Toolbar mToolbar;
 
-    public ToolbarHelper(Context context, int layoutID) {
+    public ToolbarHelper(Context context, @LayoutRes int layoutID) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
         //初始化整个内容
