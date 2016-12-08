@@ -13,16 +13,16 @@
  - ShareSDK第三方登录、分享
 
 # ScreenShots
-<img src="ScreenCapture/0.png" width="25%" />
-<img src="ScreenCapture/2.png" width="25%" />
-<img src="ScreenCapture/4.png" width="25%" />
-<img src="ScreenCapture/6.png" width="25%" />
-<img src="ScreenCapture/7.png" width="25%" />
-<img src="ScreenCapture/11.png" width="25%" />
-<img src="ScreenCapture/14.png" width="25%" />
-<img src="ScreenCapture/17.png" width="25%" />
-<img src="ScreenCapture/22.png" width="25%" />
-<img src="ScreenCapture/23.png" width="25%" />
+<img src="ScreenCapture/0.png" width="20%" />
+<img src="ScreenCapture/2.png" width="20%" />
+<img src="ScreenCapture/4.png" width="20%" />
+<img src="ScreenCapture/6.png" width="20%" />
+<img src="ScreenCapture/7.png" width="20%" />
+<img src="ScreenCapture/11.png" width="20%" />
+<img src="ScreenCapture/14.png" width="20%" />
+<img src="ScreenCapture/17.png" width="20%" />
+<img src="ScreenCapture/22.png" width="20%" />
+<img src="ScreenCapture/23.png" width="20%" />
  
 ### [更多](https://github.com/myxh/CoolShopping/tree/master/ScreenCapture)
  
