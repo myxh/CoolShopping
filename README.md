@@ -13,25 +13,16 @@
  - ShareSDK第三方登录、分享
 
 # ScreenShots
-![首页](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/0.png)
-
-![字母索引侧滑栏](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/2.png)
-
-![周边搜索](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/4.png)
-
-![未登录界面](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/6.png)
-
-![登录界面](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/7.png)
-
-![注册界面](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/11.png)
-
-![用户资料界面](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/14.png)
-
-![自动更新](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/17.png)
-
-![第三方分享](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/22.png)
-
-![商品图库](https://github.com/myxh/CoolShopping/blob/master/ScreenCapture/23.png)
+<img src="ScreenCapture/0.png" width="25%" />
+<img src="ScreenCapture/2.png" width="25%" />
+<img src="ScreenCapture/4.png" width="25%" />
+<img src="ScreenCapture/6.png" width="25%" />
+<img src="ScreenCapture/7.png" width="25%" />
+<img src="ScreenCapture/11.png" width="25%" />
+<img src="ScreenCapture/14.png" width="25%" />
+<img src="ScreenCapture/17.png" width="25%" />
+<img src="ScreenCapture/22.png" width="25%" />
+<img src="ScreenCapture/23.png" width="25%" />
  
 ### [更多](https://github.com/myxh/CoolShopping/tree/master/ScreenCapture)
  
