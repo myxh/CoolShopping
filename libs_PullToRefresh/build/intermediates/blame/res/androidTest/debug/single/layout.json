@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+        "merged": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
     },
     {
-        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+        "merged": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
     }
 ]

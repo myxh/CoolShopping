@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '25.0.0'
 
     /**兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**/
     useLibrary 'org.apache.http.legacy'
@@ -57,5 +57,5 @@ dependencies {
     //热修复
     compile 'com.alipay.euler:andfix:0.5.0@aar'
     compile files('libs/BmobPay_v3.0.3_160621.jar')
-    compile files('libs/weiboSDKCore_3.1.2.jar')
+//    compile files('libs/weiboSDKCore_3.1.2.jar')
 }

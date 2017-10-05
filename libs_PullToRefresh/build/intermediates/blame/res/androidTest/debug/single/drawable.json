@@ -1,14 +1,14 @@
 [
     {
-        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
-        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+        "merged": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     },
     {
-        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\anim_refreshing_image.xml",
-        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\anim_refreshing_image.xml"
+        "merged": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
-        "merged": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
-        "source": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+        "merged": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\anim_refreshing_image.xml",
+        "source": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\drawable\\anim_refreshing_image.xml"
     }
 ]

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\Study\Android\project_myxh\CoolShopping\libs_PullToRefresh\src\main\shaders"/></dataSet><dataSet config="release"><source path="E:\Study\Android\project_myxh\CoolShopping\libs_PullToRefresh\src\release\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="F:\Study\Android\test\CoolShopping\libs_PullToRefresh\src\main\shaders"/></dataSet><dataSet config="release"><source path="F:\Study\Android\test\CoolShopping\libs_PullToRefresh\src\release\shaders"/></dataSet></merger>

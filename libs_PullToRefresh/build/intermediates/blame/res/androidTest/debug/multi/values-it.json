@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-it\\values-it.xml",
+        "outputFile": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-it\\values-it.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 126
                 },
                 "from": {
-                    "file": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
+                    "file": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 200
                 },
                 "from": {
-                    "file": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
+                    "file": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 282
                 },
                 "from": {
-                    "file": "E:\\Study\\Android\\project_myxh\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
+                    "file": "F:\\Study\\Android\\test\\CoolShopping\\libs_PullToRefresh\\build\\intermediates\\bundles\\debug\\res\\values-it\\values-it.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
